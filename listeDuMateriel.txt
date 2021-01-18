@@ -3,7 +3,7 @@ Matériel Station MTO :
 
 ESP8266-01
 Raspberry Pi zéro WH+ carte micro SD
-capteur temérature/humidité SI7021
+capteur temérature/humidité SI7021 (SHT21 + HTU21)
 Alim micro-USB + breadboard
 Breadbord
 1 écran
