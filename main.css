@@ -1,0 +1,38 @@
+body{
+    font-family: Arial;
+    font-size: 30px;
+    background-color: #0DB6FA;
+}
+
+
+
+
+/* définition des propriétés du HEADER, à compléter */
+
+.header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color:black;
+    color:antiquewhite;
+}
+
+.header .menuPicture .avatarUser{
+    width: 12.5%;
+}
+
+.header .avatarUser{
+    height: 20px;
+}
+
+.header .menuPicture img{
+    height: 25px;
+}
+
+.header .bonjour{
+    flex:auto;
+    width:75%;
+    margin-left: 10px; /*retrouver comment faire pour mettre une marge à gauche -- flexbox ???*/ 
+}
+
+/* fin de la définition des propriétés du HEADER */

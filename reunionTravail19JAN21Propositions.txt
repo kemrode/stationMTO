@@ -1,0 +1,36 @@
+1)- choisir les technologies à utiliser 
+	|_> JS / Angular / REACT ? => définir comment faire une API
+
+2)- répartition du travail.
+
+3)- possibilité d'en faire une App mobile ?
+
+
+
+
+------------------------------------------
+
+Compte-rendu 19JAN2021
+
+	-> Possibilités de se rendre chez Louis pour le montage du système
+	-> date butoir de fin de travaux : 07/02/2021
+	-> Relier toutes les machines dispos
+
+	-> Pour App => Angular (pour Moi)
+	-> Pour API => Python/microPython (pour Paulin)
+	-> Pour le serveur => Postgres (pour Louis)
+
+
+Objectifs pour la prochaine séance (21/01/2021):
+
+	-> APP : 	Peaufiner la maquette, et commencer à voir Angular
+	-> API : 	maquette fonctionnelle
+	-> Serveur :    réflexion des éléments pour la création des tables.
+
+-> définir une politique de nommage des branches et des commits.
+
+---------------------------------------
+
+Compte-rendu 21JAN2021
+
+	-> Format des commit/push => <feat/fix/create>numero_de_travail:commentaires
