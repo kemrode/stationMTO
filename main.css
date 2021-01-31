@@ -4,6 +4,12 @@ body{
     background-color: #0DB6FA;
 }
 
+#containerPrimary {
+    display: flex;
+    flex: auto;
+
+}
+
 
 
 
@@ -56,7 +62,7 @@ body{
     justify-content:flex-start;
     background-color : white;
     max-width: 8em;
-    height: 800px;
+    height: auto;
 }
 
 
@@ -185,7 +191,15 @@ body{
 
 #primaryScreen #weatherScreen {
     display: flex;
+    flex:auto;
+    margin-left: 12.5%;
+    margin-top: 10px;
+    flex-wrap: nowrap;
     flex-direction: column;
-    flex: auto;
-    background-color : #A2E0F9;
+    justify-content:center;
+    justify-items: center;
+    max-width: 50%;
+    height: 800px;
+    background-color : #f9a2a2;
+    border: 3px black solid;
 }
