@@ -9,7 +9,7 @@ body{
 
 /* définition des propriétés du HEADER, à compléter */
 
-.header{
+#header{
     display: flex;
     align-items: center;
     text-align: center;
@@ -17,26 +17,26 @@ body{
     color:antiquewhite;
 }
 
-.header .menuPicture .avatarUser{
+#header .menuPicture .avatarUser{
     width: 12.5%;
 }
 
-.header .avatarUser{
+#header .avatarUser{
     height: 20px;
 }
 
-.header .menuPicture{
+#header .menuPicture{
     flex: auto;
     max-width: 12.5%;
     min-width: 12.5%;
     padding-left: -25px;
 }
 
-.header .menuPicture img{
+#header .menuPicture img{
     height: 25px;
 }
 
-.header .helloYou{
+#header .helloYou{
     flex:auto;
     max-width:75%;
     padding-left: 25px;
@@ -48,30 +48,144 @@ body{
 
 /* définition du menu type roll out */
 
-.menuRollOut {
+#menuRollOut {
+    display: flex;
     flex:auto;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:flex-start;
     background-color : white;
-    max-width: 10em;
+    max-width: 8em;
     height: 800px;
 }
 
-.menuRollOut .indexImg{
-    float: left;
+
+/* définition de la partie "Accueil" */
+#menuRollOut .accueil{
+    padding-top: 30px;
 }
 
-.menuRollOut .historiqueImg{
+#menuRollOut .index{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .indexImg{
     float: left;
 }
-
-.menuRollOut .parametersImg{
-    float: left;
-    /* size : 0.8em; */
-}
-
-.menuRollOut .parametersImg img{
+#menuRollOut .indexImg img{
+    padding-top: 12px;
     height: 1.2em;
 }
+/* Fin de la définition de la partie "Accueil" */
 
-.menuRollOut .faceBookPicture{
+
+/* Définition de la partie "S'inscrire" */
+#menuRollOut .logIn{
+    padding-top : 15px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+#menuRollOut .logInText{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .logInImage{
     float: left;
+}
+#menuRollOut .logInImage img{
+    padding-top: 10px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "S'inscrire"  */
+
+
+/* Définition de la partie "Historique" */
+#menuRollOut .historiques{
+    padding-top: 15px;
+}
+#menuRollOut .historique{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .historiqueImg{
+    float: left;
+}
+#menuRollOut .historiqueImg img{
+    padding-top: 25px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "Historique" */
+
+/* Définition de la partie "Parametres */
+#menuRollOut .parameters{
+    padding-top: 15px;
+}
+#menuRollOut .parameter{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .parametersImg{
+    float: left;
+}
+#menuRollOut .parametersImg img{
+    padding-top: 25px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "Parametres" */
+
+/* Définition de la partie "Partage FB" */
+#menuRollOut .shareFacebook{
+    padding-top: 15px;
+}
+#menuRollOut .fbShare{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .faceBookPicture{
+    float: left;
+}
+#menuRollOut .faceBookPicture img{
+    padding-top: 25px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "Partage FB */
+
+/* Fin de la définition du Menu */
+
+/* Définition de l'encadré principal, avec la température, le taux d'hygrométrie, la date et l'heure du relevé affiché */
+#primaryScreen {
+    display: flex;
+    flex-direction: column;
+    flex:auto;
+}
+
+#primaryScreen #weatherScreen {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    background-color : #A2E0F9;
 }
