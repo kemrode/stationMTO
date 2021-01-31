@@ -25,14 +25,53 @@ body{
     height: 20px;
 }
 
+.header .menuPicture{
+    flex: auto;
+    max-width: 12.5%;
+    min-width: 12.5%;
+    padding-left: -25px;
+}
+
 .header .menuPicture img{
     height: 25px;
 }
 
-.header .bonjour{
+.header .helloYou{
     flex:auto;
-    width:75%;
-    margin-left: 10px; /*retrouver comment faire pour mettre une marge à gauche -- flexbox ???*/ 
+    max-width:75%;
+    padding-left: 25px;
+    /* margin-left: 10px; retrouver comment faire pour mettre une marge à gauche -- flexbox ???  */
 }
 
 /* fin de la définition des propriétés du HEADER */
+
+
+/* définition du menu type roll out */
+
+.menuRollOut {
+    flex:auto;
+    background-color : white;
+    max-width: 10em;
+    height: 800px;
+}
+
+.menuRollOut .indexImg{
+    float: left;
+}
+
+.menuRollOut .historiqueImg{
+    float: left;
+}
+
+.menuRollOut .parametersImg{
+    float: left;
+    /* size : 0.8em; */
+}
+
+.menuRollOut .parametersImg img{
+    height: 1.2em;
+}
+
+.menuRollOut .faceBookPicture{
+    float: left;
+}
