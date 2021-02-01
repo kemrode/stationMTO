@@ -189,17 +189,84 @@ body{
     flex:auto;
 }
 
-#primaryScreen #weatherScreen {
+#weatherScreen {
     display: flex;
     flex:auto;
     margin-left: 12.5%;
     margin-top: 10px;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content:center;
-    justify-items: center;
+    justify-content:space-between;
+    align-items: stretch;
     max-width: 50%;
     height: 800px;
     background-color : #f9a2a2;
     border: 3px black solid;
+    border-radius: 45px/45px;
+}
+
+.weatherPicture:nth-child(1){
+    margin: auto;
+    align-self: center;
+}
+.weatherPicture img{
+    height : 15em;
+}
+
+.lengendaryPicture:nth-child(2){
+    margin: auto;
+    align-self: center;
+}
+.legendary{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#tempHumElementsContainer:nth-child(3){
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.weatherTemperature{
+    margin-left:100px;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.weatherHumidty{
+    margin-right:120px;
+    align-self: flex-end;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+#gdhContainer:nth-child(4){
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.date{
+    align-self: flex-start;
+    padding-bottom: 20px;
+    margin-left: 65px;
+}
+.groupDate{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+.hour{
+    align-self: flex-end;
+    padding-bottom: 20px;
+    margin-right: 65px;
+}
+.groupHour{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2em;
 }
