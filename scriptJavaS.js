@@ -1,22 +1,18 @@
-let menuBtn = document.querySelector('menuButton');
-let primaryMenu = document.getElementById('#menuRollOut');
-
+let menuBtn = document.querySelector('button');
+let primaryMenu = document.querySelector('#menuRollOut');
 let menuHidden=true;
 
-primaryMenu = document.style.display="none";
-document.getElementById('menuRollOut').style.display='none';
 
-menuBtn.addListener('submit', ()=> {
-    if(menuHidden==false){
-        primaryMenu = document.style.display='none'
-        menuHidden=true;
+primaryMenu.style.display="none";
+
+menuBtn.addEventListener('click', ()=> {
+    if(menuHidden){
+        primaryMenu.style.display="block";
+        menuHidden = false;
     }
     else {
-        primaryMenu = document.style.display='block;'
-        menuHidden=false;
+        
+        primaryMenu.style.display="none";
+        menuHidden = true;
     }
-});
-
-menuBtn.addEventListener('mouseover', () => {
-    document.body.style.backgroundColor = 'orange';
 });
