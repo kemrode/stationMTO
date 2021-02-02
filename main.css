@@ -59,9 +59,10 @@ body{
     flex:auto;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:space-between;
     background-color : white;
     max-width: 8em;
+    min-height: 1000px;
     height: auto;
 }
 
@@ -269,4 +270,14 @@ body{
     font-weight: bold;
     text-decoration: underline;
     font-size: 1.2em;
+}
+
+
+/* Définition du footer */
+
+#footer{
+    display: flex;
+    margin: auto;
+    align-content: space-between;
+    background-color:black;
 }
