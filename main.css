@@ -392,18 +392,29 @@ footer{
 
     .weatherTemperature {
         margin-left: 10px;
+        font-size: 1.2em;
     }
 
     .weatherHumidty {
         margin-right: 10px;
+        font-size: 1.2em;
     }
 
     .date {
         margin-left: 15px;
     }
 
+    .groupDate {
+        font-size: 0.9em;
+    }
+
     .hour {
         margin-right: 20px;
     }
+
+    .groupHour {
+        font-size: 0.9em;
+    }
+
 
 }
