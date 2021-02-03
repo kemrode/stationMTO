@@ -6,9 +6,26 @@ let menuHidden=true;
 // definition of variables about the elements of MTO case
 let temp = document.querySelector('temperatureNumber');
 let humidity = document.querySelector('hygromethrieNumber');
+let dateOfDay = new Date();
+// toLocaleDateString = jour, mois, année
+// toLocaleTimeString = l'heure
+// toLocaleString = jour, mois, l'année, l'heure
+
+// let dateLocal = dateOfDay.toLocaleString('fr-FR', {
+//     year: 'numeric',
+//     month : 'numeric',
+//     day : 'numeric',
+// });
+
+// let localTime = dateOfDay.toLocaleString('fr-FR', {
+//     hour : 'numeric';
+//     minute: 'numeric';
+// });
+
+// console.log();
 
 
-// primaryMenu.style.display="none";
+primaryMenu.style.display="none";
 
 menuBtn.addEventListener('click', ()=> {
     if(menuHidden){

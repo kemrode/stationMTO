@@ -4,6 +4,12 @@ body{
     background-color: #0DB6FA;
 }
 
+a {
+    color : black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 #containerPrimary {
     display: flex;
     flex: auto;
@@ -211,7 +217,8 @@ body{
     align-self: center;
 }
 .weatherPicture img{
-    height : 15em;
+    width:auto;
+    height:auto;
 }
 
 .lengendaryPicture:nth-child(2){
@@ -275,9 +282,295 @@ body{
 
 /* Définition du footer */
 
-#footer{
+footer{
     display: flex;
     margin: auto;
     align-content: space-between;
     background-color:black;
 }
+
+.footer_choix {
+    display: flex;
+    justify-content: center;
+    background-color:black;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Définition du responsiv */
+/* media-querries */
+
+@media (max-width:1024px) {
+    body {
+        width: auto;
+        height: auto;
+    }
+
+    #containerPrimary {
+        width: auto;
+        height: auto;
+    }
+
+        /* définition des propriétés du HEADER, à compléter */
+    #header {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .avatarUser {
+        max-width: 12.5%;
+        min-width: 12.5%;
+        height: auto;
+        background-color: red;
+    }
+
+    .menuPicture {
+    padding-left: 12.5px;
+    }
+
+    .helloYou {
+        width: 50%;
+        height:auto;
+        padding-left: 10px;
+        font-size: 0.8em;
+    }
+}
+
+/*@media (max-width: 1024px 
+{
+    body {
+        background-color: red;
+        width: auto;
+        height: auto;
+    }
+
+    #containerPrimary {
+        width: auto;
+        height: auto;
+    }
+    /* définition des propriétés du HEADER, à compléter */
+
+    /* #header{
+        width: auto;
+        height: auto;
+    }
+
+    #header .menuPicture .avatarUser{
+        width: 12.5%;
+        height :auto;
+    }
+
+    #header .avatarUser{
+        height: 6.5px;
+    }
+
+    #header .menuPicture{
+        padding-left: -12.5px;
+    }
+
+    #header .menuPicture img{
+        height: 12.5px;
+    }
+
+    #header .helloYou{
+        padding-left: 15px;
+    } */
+    /* définition du menu type roll out */
+
+    /* #menuRollOut {
+        width: auto;
+        min-width: 50%;
+        height: auto;
+    }
+    a{
+        font-size:0.2em;
+    } */
+
+/*  */
+    /* définition de la partie "Accueil" */
+    /* #menuRollOut .accueil{ */
+        /* padding-top: 15px;
+    }
+
+    #menuRollOut .index{
+        padding-top: 7.5px;
+        padding-left: 7.5px;
+        font-size: 0.2em;
+    }
+    #menuRollOut .indexImg{
+        float: left;
+    }
+    #menuRollOut .indexImg img{
+        padding-top: 6px;
+        height: 0.6em;
+    } */
+    /* Fin de la définition de la partie "Accueil" */
+
+
+    /* Définition de la partie "S'inscrire" */
+    /* #menuRollOut .logIn{
+        padding-top : 7.5px;
+        padding-right: 7.5px;
+        height: 0.6em;
+    }
+    #menuRollOut .logInText{
+        padding-top: 7.5px;
+        padding-left: 7.5px;
+        font-size: 0.2em;
+    }
+    #menuRollOut .logInImage{
+        float: left;
+    }
+    #menuRollOut .logInImage img{
+        padding-top: 5px;
+        padding-right: 2.5px;
+        height: 0.6em;
+    } */
+    /* Fin de la définition de la partie "S'inscrire"  */
+
+
+    /* Définition de la partie "Historique" */
+    /* #menuRollOut .historiques{
+        padding-top: 7.5px;
+    }
+    #menuRollOut .historique{
+        padding-top: 15px;
+        padding-left: 7.5px;
+        font-size: 0.2em;
+    }
+    #menuRollOut .historiqueImg{
+        float: left;
+    }
+    #menuRollOut .historiqueImg img{
+        padding-top: 12.5px;
+        padding-right: 2.5px;
+        height: 0.6em;
+    } */
+    /* Fin de la définition de la partie "Historique" */
+
+    /* Définition de la partie "Parametres */
+    /* #menuRollOut .parameters{
+        padding-top: 7.5px;
+    }
+    #menuRollOut .parameter{
+        padding-top: 15px;
+        padding-left: 7.5px;
+        font-size: 0.2em;
+    }
+    #menuRollOut .parametersImg{
+        float: left;
+    }
+    #menuRollOut .parametersImg img{
+        padding-top: 12.5px;
+        padding-right: 2.5px;
+        height: 0.6em;
+    } */
+    /* Fin de la définition de la partie "Parametres" */
+
+    /* Définition de la partie "Partage FB" */
+    /* #menuRollOut .shareFacebook{
+        padding-top: 7.5px;
+    }
+    #menuRollOut .fbShare{
+        padding-top: 15px;
+        padding-left: 7.5px;
+        font-size: 0.2em;
+    }
+    #menuRollOut .faceBookPicture{
+        float: left;
+    }
+    #menuRollOut .faceBookPicture img{
+        padding-top: 12.5px;
+        padding-right: 2.5px;
+        height: 0.6em;
+    } */
+    /* Fin de la définition de la partie "Partage FB */
+
+    /* Fin de la définition du Menu */
+    /* Définition de l'encadré principal, avec la température, le taux d'hygrométrie, la date et l'heure du relevé affiché */
+    /* #primaryScreen {
+        width : auto;
+        height : auto;
+    }
+
+    #weatherScreen {
+        display: flex;
+        width: auto;
+        margin-left: 12.5%;
+        margin-top: 10px;
+        height: 400px;
+    } */
+
+    /* .weatherPicture:{
+        width: auto;
+        height: auto;
+    } */
+    /* .weatherPicture img{
+        width: auto;
+        height: auto;
+
+    }
+
+    .lengendaryPicture:nth-child(2){
+        margin: auto;
+        align-self: center;
+    }
+    .legendary{
+        font-size: 0.4em;
+    }
+
+    #tempHumElementsContainer:nth-child(3){
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+    }
+
+    .weatherTemperature{
+        margin-left:25px;
+        font-size: 0.8em;
+    }
+
+    .weatherHumidty{
+        margin-right:30px;
+        font-size: 0.8m;
+    }
+
+    #gdhContainer:nth-child(4){
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+
+    .date{
+        margin-left: 25px;
+    }
+    .groupDate{
+        font-size: 0.4em;
+    }
+
+    .hour{
+        padding-bottom: 7px;
+        margin-right: 20px;
+    }
+    .groupHour{
+        font-size: 0.4em;
+    }
+ */
+
+    /* Définition du footer */
+
+    /* footer{
+        display: flex;
+        margin: auto;
+        align-content: space-between;
+        background-color:black;
+    }
+
+    .footer_choix {
+        display: flex;
+        justify-content: center;
+        background-color:black;
+    }
+    
+} */
