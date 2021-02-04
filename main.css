@@ -1,10 +1,9 @@
 body{
     font-family: Arial;
     font-size: 30px;
-    /* background-color: #0DB6FA; */
-    background: #0DB6FA;
-    background: -webkit-linear-gradient(to top, #ffffff27, #6DD5FA, #0DB6FA);
-    background: linear-gradient(to top, #ffffff27, #6DD5FA, #0DB6FA);
+    min-height:1280px;
+    background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
+    background-repeat: no-repeat;
 }
 
 a {
@@ -16,11 +15,7 @@ a {
 #containerPrimary {
     display: flex;
     flex: auto;
-
 }
-
-
-
 
 /* définition des propriétés du HEADER, à compléter */
 
@@ -32,26 +27,25 @@ a {
     color:antiquewhite;
 }
 
-#header .menuPicture .avatarUser{
-    width: 12.5%;
+
+.avatarUser{
+    max-width: 12.5%;
+    max-height: 12.5%;
+    background-color: red;
 }
 
-#header .avatarUser{
-    height: 20px;
-}
-
-#header .menuPicture{
+.menuPicture{
     flex: auto;
     max-width: 12.5%;
     min-width: 12.5%;
     padding-left: -25px;
 }
 
-#header .menuPicture img{
+.menuPicture img{
     height: 25px;
 }
 
-#header .helloYou{
+.helloYou{
     flex:auto;
     max-width:75%;
     padding-left: 25px;
@@ -75,7 +69,6 @@ a {
     min-height: 1000px;
     height: auto;
     display: none;
-    z-index: 100%;
 }
 
 
@@ -198,15 +191,27 @@ a {
 /* Définition de l'encadré principal, avec la température, le taux d'hygrométrie, la date et l'heure du relevé affiché */
 #primaryScreen {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex:auto;
+    justify-content: space-between;
+}
+
+#map {
+    display: flex;
+    margin: auto;
+    align-self: flex-end;
+    width: 25%;
+    height: 50%;
+    padding-top: 150px;;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #weatherScreen {
     display: flex;
     flex:auto;
     margin-left: 12.5%;
-    margin-top: 10px;
+    margin-top: 50px;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content:space-between;
@@ -215,7 +220,6 @@ a {
     height: 800px;
     border: 3px black solid;
     border-radius: 45px/45px;
-    background: #2980B9;
     background: -webkit-linear-gradient(to right, #ffffffde, #6DD5FA, #2980B9);
     background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
 }
@@ -304,6 +308,8 @@ footer{
     background-color:black;
 }
 
+
+
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Définition du responsiv */
 /* media-querries */
@@ -330,7 +336,6 @@ footer{
         max-width: 12.5%;
         min-width: 12.5%;
         height: auto;
-        background-color: red;
     }
 
     .menuPicture {
@@ -422,6 +427,12 @@ footer{
 
     .groupHour {
         font-size: 0.9em;
+    }
+
+    #map {
+        margin: auto;
+        width: auto;
+        height: auto;
     }
 
 

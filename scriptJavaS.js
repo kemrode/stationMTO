@@ -1,6 +1,7 @@
 // definition of variables about the menu roll out type
 let menuBtn = document.querySelector('button');
 let primaryMenu = document.querySelector('#menuRollOut');
+// let mapped = document.querySelector('#map');
 let menuHidden=true;
 
 // definition of variables about the elements of MTO case
@@ -26,7 +27,7 @@ let localTime = dateOfDay.toLocaleString(navigator.language, {
 date.textContent = `${localDate}`;
 let time = hour.textContent = `${localTime}`;
 
-
+// mapped.style.display = "block";
 primaryMenu.style.display="none";
 
 menuBtn.addEventListener('click', ()=> {
@@ -34,6 +35,7 @@ menuBtn.addEventListener('click', ()=> {
         primaryMenu.style.display="block";
         primaryMenu.style.display='flex';
         primaryMenu.style.width='8em';
+        primaryMenu.style.zIndex=1;
         menuHidden = false;
     }
     else {
