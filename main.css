@@ -1,7 +1,10 @@
 body{
     font-family: Arial;
     font-size: 30px;
-    background-color: #0DB6FA;
+    /* background-color: #0DB6FA; */
+    background: #0DB6FA;
+    background: -webkit-linear-gradient(to top, #ffffff27, #6DD5FA, #0DB6FA);
+    background: linear-gradient(to top, #ffffff27, #6DD5FA, #0DB6FA);
 }
 
 a {
@@ -68,8 +71,11 @@ a {
     justify-content:space-between;
     background-color : white;
     max-width: 8em;
+    width:0%;
     min-height: 1000px;
     height: auto;
+    display: none;
+    z-index: 100%;
 }
 
 
@@ -207,9 +213,11 @@ a {
     align-items: stretch;
     max-width: 50%;
     height: 800px;
-    background-color : #f9a2a2;
     border: 3px black solid;
     border-radius: 45px/45px;
+    background: #2980B9;
+    background: -webkit-linear-gradient(to right, #ffffffde, #6DD5FA, #2980B9);
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
 }
 
 .weatherPicture:nth-child(1){

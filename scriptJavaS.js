@@ -16,21 +16,15 @@ let localDate = dateOfDay.toLocaleString(navigator.language, {
     day: 'numeric'
 });
 
-console.log(date);
-console.log(hour);
-console.log(localDate);
-
 let localTime = dateOfDay.toLocaleString(navigator.language, {
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric'
 });
 
-console.log(localTime);
 
-// functions to set the local time and date
 date.textContent = `${localDate}`;
-hour.textContent = `${localTime}`;
+let time = hour.textContent = `${localTime}`;
 
 
 primaryMenu.style.display="none";
@@ -39,6 +33,7 @@ menuBtn.addEventListener('click', ()=> {
     if(menuHidden){
         primaryMenu.style.display="block";
         primaryMenu.style.display='flex';
+        primaryMenu.style.width='8em';
         menuHidden = false;
     }
     else {
