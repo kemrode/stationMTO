@@ -3,8 +3,7 @@ body{
     font-size: 30px;
     height:auto;
     width:100%;
-    /* min-height:1024px; */
-    min-height:1280px;
+    min-height:1024px;
     background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
     background-repeat: no-repeat;
 }
@@ -20,6 +19,9 @@ a {
     flex: auto;
     height:auto;
     width:auto;
+    /* background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
+    background-repeat: no-repeat; */
+    z-index: 1;
 }
 
 /* définition des propriétés du HEADER, à compléter */
@@ -63,8 +65,6 @@ a {
 /* définition du menu type roll out */
 
 #menuRollOut {
-    position: absolute;
-    z-index: 1;
     display: flex;
     flex:auto;
     flex-wrap: nowrap;
@@ -76,6 +76,8 @@ a {
     min-height: 1000px;
     height: auto;
     display: none;
+    float: left;
+    z-index: 2;
 }
 
 
@@ -203,104 +205,6 @@ a {
     justify-content: space-between;
 }
 
-#map {
-    display: flex;
-    margin: auto;
-    align-self: flex-end;
-    width: 25%;
-    height: 50%;
-    padding-top: 150px;;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-#weatherScreen {
-    display: flex;
-    flex:auto;
-    margin-left: 12.5%;
-    margin-top: 50px;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items: stretch;
-    max-width: 50%;
-    height: 800px;
-    border: 3px black solid;
-    border-radius: 45px/45px;
-    background: -webkit-linear-gradient(to right, #ffffffde, #6DD5FA, #2980B9);
-    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
-}
-
-.weatherPicture:nth-child(1){
-    margin: auto;
-    align-self: center;
-}
-.weatherPicture img{
-    width:auto;
-    height:auto;
-    min-height: 10em;
-}
-
-.lengendaryPicture:nth-child(2){
-    margin: auto;
-    align-self: center;
-}
-.legendary{
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-#tempHumElementsContainer:nth-child(3){
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-}
-
-.weatherTemperature{
-    margin-left:100px;
-    align-self: flex-start;
-    font-weight: bold;
-    font-size: 1.6em;
-}
-
-.weatherHumidty{
-    margin-right:120px;
-    align-self: flex-end;
-    font-weight: bold;
-    font-size: 1.6em;
-}
-
-#gdhContainer:nth-child(4){
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-    padding-bottom: 20px;
-}
-
-.date{
-    align-self: flex-start;
-    padding-bottom: 20px;
-    margin-left: 65px;
-}
-.groupDate{
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 1.2em;
-}
-
-.hour{
-    align-self: flex-end;
-    padding-bottom: 20px;
-    margin-right: 65px;
-}
-.groupHour{
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 1.2em;
-}
-
-
-/* Définition du footer */
 
 footer{
     display: flex;
@@ -391,56 +295,5 @@ footer{
         height: auto;
     }
     /* Fin de la définition du Menu */
-    /* Définition de l'encadré principal, avec la température, le taux d'hygrométrie, la date et l'heure du relevé affiché */
     
-    #primaryScreen{
-        width: auto;
-        height: auto;
-    }
-
-    #weatherScreen {
-        width: auto;
-        min-width: 75%;
-        height: 80%;
-    }
-
-    .weatherPicture img{
-        width: auto;
-        height: auto;
-        min-height: 10em;
-    }
-
-    .weatherTemperature {
-        margin-left: 10px;
-        font-size: 1.2em;
-    }
-
-    .weatherHumidty {
-        margin-right: 10px;
-        font-size: 1.2em;
-    }
-
-    .date {
-        margin-left: 15px;
-    }
-
-    .groupDate {
-        font-size: 0.9em;
-    }
-
-    .hour {
-        margin-right: 20px;
-    }
-
-    .groupHour {
-        font-size: 0.9em;
-    }
-
-    #map {
-        margin: auto;
-        width: auto;
-        height: auto;
-    }
-
-
 }
