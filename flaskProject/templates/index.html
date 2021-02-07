@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+  <p>Voici les relevés :</p>
+      <p>
+       {%- for releve in content_list %}
+         <p>
+           <h2>{{ releve['date'] }}</h2>
+           <h5>Temperature {{ releve['temperature'] }}</h5>
+           <h4>Humidite {{ releve['humidite'] }}</h4>
+         </p>
+
+       {%- endfor %}
+      </p>
+{%- endblock %}
+</body>
+</html>
