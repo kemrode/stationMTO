@@ -1,8 +1,18 @@
 /*==============================================================*/
 /* Nom de SGBD :  PostgreSQL 8                                  */
-/* Date de création :  03/02/2021 19:33:24                      */
+/* Date de création :  07/02/2021 15:07:02                      */
 /*==============================================================*/
 
+
+drop index T_TEMPERATURE_PK;
+
+drop table T_TEMPERATURE;
+
+drop index AFFECTER_FK;
+
+drop index T_UTILISATEUR_PK;
+
+drop table T_UTILISATEUR;
 
 /*==============================================================*/
 /* Table : T_TEMPERATURE                                        */
@@ -31,6 +41,8 @@ create table T_UTILISATEUR (
    PRENOM               VARCHAR(40)          null,
    VILLE                VARCHAR(40)          null,
    API_KEY              VARCHAR(63)          not null,
+   DATEADD              DATE                 null,
+   IP_USER              VARCHAR(16)          null,
    constraint PK_T_UTILISATEUR primary key (ID_USER)
 );
 
