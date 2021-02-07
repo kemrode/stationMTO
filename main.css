@@ -1,6 +1,9 @@
 body{
     font-family: Arial;
     font-size: 30px;
+    height:auto;
+    width:100%;
+    /* min-height:1024px; */
     min-height:1280px;
     background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
     background-repeat: no-repeat;
@@ -15,6 +18,8 @@ a {
 #containerPrimary {
     display: flex;
     flex: auto;
+    height:auto;
+    width:auto;
 }
 
 /* définition des propriétés du HEADER, à compléter */
