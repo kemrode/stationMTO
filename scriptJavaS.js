@@ -51,12 +51,12 @@ function isInputEmpty(inputField) {
         if(inputField.value.length == 0){
             msg = alert("Veuillez remplir le champ obligatoire, svp.");
             inputField.style.backgroundColor = '#FA0505';
+            return isEmpty;
         }
         else {
             isEmpty = false;
             
             inputField.style.backgroundColor = '#FDFEFE';
-            console.log(inputField.value);
         }
 
         return isEmpty;
@@ -71,13 +71,10 @@ let arrayOfInputElementsForDataBase = {
     'Password':pwd.value
 };
 
-console.log(arrayOfInputElementsForDataBase);
-
 
 //function to submit the elements write by user
 submitBTN.addEventListener('click', ()=> {
 
-    // let signUp = document.querySelector('#signUpWindow');
     let msg;
     let pwdCorrect = false;
     let index = 0;
@@ -86,26 +83,20 @@ submitBTN.addEventListener('click', ()=> {
     nom = document.querySelector('#name');
     isInputEmpty(nom);
     arrayOfInputElementsForDataBase['FirstName']=nom.value;
-    // transfer(FirstName,nom);
     surname = document.querySelector('#surname');
     isInputEmpty(surname);
     arrayOfInputElementsForDataBase['LastName']=surname.value;
-    // transfer(LastName,surname);
     city = document.querySelector('#city');
     isInputEmpty(city);
     arrayOfInputElementsForDataBase['City']=city.value;
-    // transfer(City,city);
     eMail = document.querySelector('#mailAddress');
     isInputEmpty(eMail);
     arrayOfInputElementsForDataBase['Email']=eMail.value;
-    // transfer(Email,eMail); 
     pwd = document.querySelector('#pwd');
     isInputEmpty(pwd);
     arrayOfInputElementsForDataBase['Password']=pwd.value;
-    // transfer(Password,pwd);
     if(pwd.value.length<8){
         msg = alert("veuillez entrer un mot de passe de 8 caractères minimum, svp.");
-        // pwd.style.backgroundColor = '#62FD40';
     }
     pwdVerif = document.querySelector('#pwdVerif');
     isInputEmpty(pwdVerif);
@@ -117,53 +108,35 @@ submitBTN.addEventListener('click', ()=> {
         msg = alert(" Attention !Vous n'avez pas entré le même mot de passe !");
         pwdVerif.style.backgroundColor = '#FA0505';
     }
-    // console.log(arrayOfInputElementsForDataBase);
-    console.log("stop !!");
+    console.log(pwdCorrect);
+    console.log(isEmpty);
 
-    
-    for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
-        console.log(key, value);
+    if(pwdCorrect==true && isEmpty ==false){
+        console.log("conditions vérifiées");
+        for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
+            transfer(key, value)
+        }
     }
-
-    // if(isEmpty){
-    //         for(const [key, value] of arrayOfInputElementsForDataBase.entries()){
-    //         console.log(key, value);
-    //     }
-    // };
-
+    else {
+        console.log("conditions non vérifiées");
+    }
 });
 
 
-// function transfer(key,inputField) {
-//     $.ajax({
-//     type: "POST",
-//     url: "url",
-//     // data=arrayOfInputElementsForDataBase[key]=inputField.value,
-//     // data: "LastName=surname",
-//     dataType: "dataType",
-//     success: function (response) {
-//         console.log("all is working fine !");
-//     },
-//     error: () => {
-//         alert("une erreur lors de l'envoi des données est survenue veuillez réessayer plus tard");
-//     }
-// });
-// }
-// let monTableauAssociatif = {
-//     'prenom' : 'Mark',
-//     'nom'    : 'Zuckerberg',
-//     'poste'  : 'PDG de Facebook'
-// };
-
-
-// let arrayOfInputElementsForDataBase = {
-//     'LastName':surname.value,
-//     'FirstName':nom.value,
-//     'City':city.value,
-//     'Email':eMail.value,
-//     'Password':pwd.value
-// };
-
+function transfer(key,value) {
+    $.ajax({
+    type: "POST",
+    url: "url",
+    data: key=value,
+    dataType: "dataType",
+    success: function (response) {
+        console.log("all is working fine !");
+    },
+    error: () => {
+        alert("une erreur lors de l'envoi des données est survenue veuillez réessayer plus tard");
+    }
+});
+}
 
 
 // $.ajax({
