@@ -21,11 +21,13 @@ var nom = document.querySelector('#name');
 var surname = document.querySelector('#surname');
 var city = document.querySelector('#city');
 var eMail = document.querySelector('#mailAddress');
-var cgu=false;
+var cgu= document.querySelector('#cgu');
+var checkbox = document.querySelector('#cguCheckbox');
 var pwd = document.querySelector('#pwd');
 var pwdVerif = document.querySelector('#pwdVerif');
 var isEmpty=true;
 var submitBTN = document.querySelector('#submitBTN');
+let cguCheck = false;
 
 
 //function to change display of the menuRollOut
@@ -55,8 +57,10 @@ function isInputEmpty(inputField) {
         }
         else {
             isEmpty = false;
-            
             inputField.style.backgroundColor = '#FDFEFE';
+            if(inputField != pwd && inputField!=pwdVerif){
+                inputField.value = "";
+            }
         }
 
         return isEmpty;
@@ -71,6 +75,12 @@ let arrayOfInputElementsForDataBase = {
     'Password':pwd.value
 };
 
+
+//function to check the cgu checkbox:
+cgu.addEventListener('click', ()=> {
+    checkbox.checked = true;
+    return cguCheck = true;
+})
 
 //function to submit the elements write by user
 submitBTN.addEventListener('click', ()=> {
@@ -108,11 +118,16 @@ submitBTN.addEventListener('click', ()=> {
         msg = alert(" Attention !Vous n'avez pas entré le même mot de passe !");
         pwdVerif.style.backgroundColor = '#FA0505';
     }
-    console.log(pwdCorrect);
-    console.log(isEmpty);
 
-    if(pwdCorrect==true && isEmpty ==false){
+    if(cguCheck == false){
+        msg = alert("Vous devez accepter les conditions générales d'utilisation pour vous inscrire.\nMerci de les accepter.")
+    }
+
+    if(pwdCorrect==true && isEmpty ==false && cguCheck == true){
         console.log("conditions vérifiées");
+        pwd.value ="";
+        pwdVerif.value = "";
+        checkbox.checked = false;
         for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
             transfer(key, value)
         }
