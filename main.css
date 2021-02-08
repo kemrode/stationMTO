@@ -76,6 +76,7 @@ a {
     min-height: 1000px;
     height: auto;
     display: none;
+    border:3px black;
 }
 
 
@@ -198,6 +199,8 @@ a {
 /* Définition de l'encadré principal, avec la température, le taux d'hygrométrie, la date et l'heure du relevé affiché */
 #primaryScreen {
     display: flex;
+    height: auto;
+    width: 100%;
     flex-direction: row;
     flex:auto;
     justify-content: space-between;
