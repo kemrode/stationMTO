@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>s'inscrire</title>
     <link rel="stylesheet" type="text/css" href="logInRequest.css" />
+    <script class="jQuery" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
     <div id="header"> <!-- entête permettant l'affichage et le retrait du menu sur le côté, ainsi que le message de bienvenue pour l'utilisateur et son avatar-->
@@ -93,12 +94,15 @@
                     <input type="password" id="pwd" name="pwd">
                 </div>
                 <div id="verifSU">
-                    <label for="pwdVerif">Vérifier votre mot de passe: </label>
+                    <label for="pwdVerif">Vérifiez votre mot de passe: </label>
                     <input type="password" id="pwdVerif" name="pwdVerif">
                 </div>
                 <div id="cgu">
                     <input type="checkbox" id="cguCheckbox" name="cgu" value="true">
                     <label for="cgu">J'accepte les termes et conditions générales d'utilisation.</label>
+                </div>
+                <div id="submitBTN">
+                    <button class="submitBTN">Envoyer</button>
                 </div>
             </div>
         </div>
