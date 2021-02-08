@@ -232,6 +232,26 @@ a {
 }
 
 #surnameSU{
+    padding-top: 25px;
+}
+
+#citySU {
+    padding-top: 25px;
+}
+
+#mailSU {
+    padding-top: 25px;
+}
+
+#passwordSU {
+    padding-top: 25px;
+}
+
+#verifSU {
+    padding-top: 25px;
+}
+
+.CGU {
     padding-top: 50px;
 }
 
