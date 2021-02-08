@@ -220,6 +220,7 @@ a {
 
 h3 {
     display:flex;
+    width: 50%;
     align-items: center;
     font-style: italic;
 }
@@ -236,26 +237,32 @@ input {
 
 #nameSU {
     padding-top: 25px;
+    padding-left: 25px;
 }
 
 #surnameSU{
     padding-top: 25px;
+    padding-left: 25px;
 }
 
 #citySU {
     padding-top: 25px;
+    padding-left: 25px;
 }
 
 #mailSU {
     padding-top: 25px;
+    padding-left: 25px;
 }
 
 #passwordSU {
     padding-top: 25px;
+    padding-left: 25px;
 }
 
 #verifSU {
     padding-top: 25px;
+    padding-left: 25px;
 }
 
 #cgu {
@@ -263,6 +270,7 @@ input {
     flex-direction: row;
     justify-content: flex-start;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #cguCheckbox {
