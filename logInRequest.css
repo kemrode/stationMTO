@@ -214,13 +214,20 @@ a {
     flex-direction: column;
     justify-self: center;
     height: auto;
-    width: 50%;
+    width: 60%;
+    background-color: #D5D8DC;
 }
 
-.response {
+h3 {
+    display:flex;
+    align-items: center;
+    font-style: italic;
+}
+
+input {
     display:flex;
     justify-content: center;
-    width:100%;
+    width:70%;
     height: 50px;
     border: 3px black solid;
     border-radius: 45px/45px;
@@ -251,8 +258,23 @@ a {
     padding-top: 25px;
 }
 
-.CGU {
+#cgu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     padding-top: 50px;
+}
+
+#cguCheckbox {
+    width: 15%;
+    height:30px;
+} 
+
+#cgu label{
+    width: 85%;
+    justify-self: flex-start;
+    font-style: normal;
+    font-size: 0.8em;
 }
 
 

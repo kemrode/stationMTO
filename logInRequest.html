@@ -73,30 +73,33 @@
             <div id="signUpWindow">
                 <h3 class="nameSignUp">Fiche d'inscription</h3>
                 <div id="nameSU">
-                    <div class="name">Nom: </div>
-                    <div class="response"></div>
+                    <label for="name">Nom: </label>
+                    <input type="text" id="name" name="name">
                 </div>
                 <div id="surnameSU">
-                    <div class="surname">Prénom: </div>
-                    <div class="response"></div>
+                    <label for="surname">Prénom: </label>
+                    <input type="text" id="surname" name="surname">
                 </div>
                 <div id="citySU">
-                    <div class="city">Ville: </div>
-                    <div class="response"></div>
+                    <label for="city">Ville: </label>
+                    <input type="text" id="city" name="city">
                 </div>
                 <div id="mailSU">
-                    <div class="mailAddress">e-mail: </div>
-                    <div class="response"></div>
+                    <label for="mailAddress">e-mail: </label>
+                    <input type="text" id="mailAddress" name="mailAddress">
                 </div>
                 <div id="passwordSU">
-                    <div class="password">Mot de Passe: </div>
-                    <div class="response"></div>
+                    <label for="pwd">Mot de Passe: </label>
+                    <input type="password" id="pwd" name="pwd">
                 </div>
                 <div id="verifSU">
-                    <div class="passwordVerif">Vérification Mot de Passe: </div>
-                    <div class="response"></div>
+                    <label for="pwdVerif">Vérifier votre mot de passe: </label>
+                    <input type="password" id="pwdVerif" name="pwdVerif">
                 </div>
-                <div class="CGU">J'accepte les termes et conditions générales d'utilisation.</div>
+                <div id="cgu">
+                    <input type="checkbox" id="cguCheckbox" name="cgu" value="true">
+                    <label for="cgu">J'accepte les termes et conditions générales d'utilisation.</label>
+                </div>
             </div>
         </div>
         
