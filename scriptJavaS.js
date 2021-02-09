@@ -59,11 +59,14 @@ function isInputEmpty(inputField) {
             isEmpty = false;
             inputField.style.backgroundColor = '#FDFEFE';
             if(inputField != pwd && inputField!=pwdVerif){
-                inputField.value = "";
             }
         }
 
         return isEmpty;
+}
+
+function clearField(inputField) {
+        inputField.value="";
 }
 
 
@@ -129,7 +132,9 @@ submitBTN.addEventListener('click', ()=> {
         pwdVerif.value = "";
         checkbox.checked = false;
         for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
-            transfer(key, value)
+            // console.log(key);
+            // console.log(value);
+            transfer(key, value);
         }
     }
     else {
@@ -139,16 +144,20 @@ submitBTN.addEventListener('click', ()=> {
 
 //Ajax request to POST elements when new sign up
 function transfer(key,value) {
+    console.log("entrée dans transfer"),
+    console.log(key),
+    console.log(value),
     $.ajax({
     type: "POST",
-    url: url,
+    url: 'http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/<string:xLastName>/<string:xFirstName>/<string:xCity>/<string:xEmail>/<string:xPassword>',
     data: key=value,
-    dataType: String,
+    dataType: 'string',
     success: function (response) {
-        console.log("all is working fine !");
+    console.log("all is working fine !");
     },
     error: () => {
         alert("une erreur lors de l'envoi des données est survenue veuillez réessayer plus tard");
     }
 });
+    console.log("fin de la fonction transfer");
 }
