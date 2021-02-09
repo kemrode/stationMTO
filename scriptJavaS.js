@@ -129,40 +129,40 @@ submitBTN.addEventListener('click', ()=> {
     if(pwdCorrect==true && isEmpty ==false && cguCheck == true){
         console.log("conditions vérifiées");
         
-        clearField(nom);
-        clearField(surname);
-        clearField(city);
-        clearField(eMail);
-        clearField(pwd);
-        clearField(pwdVerif);
-        // pwd.value ="";
-        // pwdVerif.value = "";
         checkbox.checked = false;
-        for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
-            transfer(key, value);
-        }
+        // for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
+        //     transfer(key, value);
+        // }
+        transfer(arrayOfInputElementsForDataBase);
         console.log(arrayOfInputElementsForDataBase);
         // transfer(arrayOfInputElementsForDataBase);
     }
     else {
         console.log("conditions non vérifiées");
     }
+    clearField(nom);
+    clearField(surname);
+    clearField(city);
+    clearField(eMail);
+    clearField(pwd);
+    clearField(pwdVerif);
 });
 
 //Ajax request to POST elements when new sign up
-function transfer(key, value) {
+function transfer(arrayOfInputElementsForDataBase) {
     // console.log("entrée dans transfer"),
     // console.log(key),
     // console.log(value),
     $.ajax({
     type: "POST",
-    url: 'http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/<string:xLastName>/<string:xFirstName>/<string:xCity>/<string:xEmail>/<string:xPassword>',
-    data: key = value,
+    url: 'http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/',
+    data: JSON.stringify(arrayOfInputElementsForDataBase),
     dataType: 'text',
     success: function (response) {
     console.log("all is working fine !");
     },
     error: () => {
+        console.log(JSON.stringify(arrayOfInputElementsForDataBase));
         alert("une erreur lors de l'envoi des données est survenue veuillez réessayer plus tard");
     }
 });

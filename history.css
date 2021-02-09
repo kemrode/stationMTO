@@ -251,11 +251,11 @@ a {
 
 #box {
     display: flex;
-    flex: auto;
+    /* flex: auto; */
     margin-left:6%;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: stretch;
     border: 2px black solid;
     border-radius: 45px/45px;
@@ -266,10 +266,20 @@ a {
     background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
 }
 
-.weatherPicture:nth-child(1){
+#legendaryAndPicture {
+    margin:auto;
+    width:auto;
+    height: auto;
+    display: flex;
+    /* flex: auto; */
+    flex-direction: row;
+
+}
+
+.weatherPicture:{
     margin: auto;
+    width: auto;
     align-self: center;
-    align-items: center;
 }
 .weatherPicture img{
     width:auto;
@@ -277,8 +287,10 @@ a {
     min-height: 5em;
 }
 
-.lengendaryPicture:nth-child(2){
+.lengendaryPicture:{
     margin: auto;
+    width: auto;
+    height: 25%;
     align-self: center;
 }
 .legendary{
@@ -286,34 +298,33 @@ a {
     font-size: 0.7em;
 }
 
-#tempHumElementsContainer:nth-child(3){
+#tempHumElementsContainer:{
     display: flex;
-    flex:auto;
     flex-direction:row;
     width:auto;
     height:auto;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
 .weatherTemperature{
-    margin-left:15px;
     align-self: flex-start;
     font-weight: bold;
     font-size: 0.8em;
 }
 
 .weatherHumidty{
-    margin-right:17px;
     align-self: flex-end;
     font-weight: bold;
     font-size: 0.8em;
 }
 
-#gdhContainer:nth-child(4){
+#gdhContainer:{
     display: flex;
+    flex: auto;
     flex-direction:row;
+    align-items: flex-end;
     justify-content: space-between;
-    /* padding-bottom: 20px; */
 }
 
 .date{
