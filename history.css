@@ -3,7 +3,7 @@ body{
     font-size: 30px;
     height:auto;
     width:100%;
-    min-height:1024px;
+    min-height:1280px;
     background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
     background-repeat: no-repeat;
 }
@@ -200,12 +200,15 @@ a {
 #primaryContainer {
     display: flex;
     flex:auto;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 800px;
+    flex-direction: column;
+    width: inherit;
+    height:auto;
+    /* min-height: 800px;*/
     height: 100%;
-    background-color: blue;
+    /* background-color: blue; */
     justify-content: center;
+
+    
 }
 
 #historyBox {
@@ -214,11 +217,13 @@ a {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
+    align-self: center;
     width:75%;
-    height:100%;
-    min-height: 800px;
+    height:inherit;
+    min-height: 1100px;
+    padding-top: 25px;
+    background-color: #B3B6B7;
     border: 2px black solid;
-    background-color: red;
 }
 
 #firstLine {
@@ -227,11 +232,16 @@ a {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    width: 100%;
-    height: 25%;
+    width: inherit;
+    height: 50%;
     padding-top: 20px;
-    /* background-color: green; */
-    overflow-y: scroll;
+    background-color: #F0F3F4;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: absolute;
+    top: 200px;
+    padding-bottom: 20px;
+    border: 1px black solid;
 }
 
 
@@ -242,16 +252,21 @@ a {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    width: 100%;
-    height: 25%;
+    width:inherit;
+    height: 50%;
     padding-top: 100px;
-    /* background-color: yellow; */
-    overflow-y: scroll;
+    background-color: #F0F3F4;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: absolute;
+    top: 700px;
+    padding-bottom: 20px;
+    border: 1px black solid;
 }
 
 #box {
     display: flex;
-    /* flex: auto; */
+    flex: auto;
     margin-left:6%;
     flex-direction: row;
     flex-wrap: wrap;
@@ -266,19 +281,8 @@ a {
     background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
 }
 
-/* #legendaryAndPicture {
-    margin:auto;
-    width:auto;
-    height: auto;
-    display: flex;
-    /* flex: auto; */
-    flex-direction: row;
-
-} */
-
 .weatherPicture:nth-child(1){
     margin: auto;
-    /* width: auto; */
     align-self: center;
 }
 .weatherPicture img{
@@ -289,8 +293,6 @@ a {
 
 .lengendaryPicture:nth-child(2){
     margin: auto;
-    /* width: auto;
-    height: 25%; */
     align-self: center;
 }
 .legendary{
@@ -325,7 +327,6 @@ a {
     display: flex;
     flex: auto;
     flex-direction:column;
-    /* align-items: flex-end; */
     justify-content: space-between;
 }
 
