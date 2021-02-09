@@ -12,10 +12,15 @@ const url = 'http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/<string:xLastName>
 let submitBtn = document.querySelector('.btn');
 var eMail = document.querySelector('#email');
 var pwd = document.querySelector('#pwd');
+let nameTitle = document.querySelector('.name');
+let surnameTitle = document.querySelector('.surname');
+var connect = false;
 
 let dictSignIn = {
     'xEmail': "",
-    'xPassword': ""
+    'xPassword': "",
+    'xLastName':"",
+    'xFirstName':""
 };
 
 function clearingFields (inputFields) {
@@ -41,9 +46,27 @@ function postPasswordAndEmail(dict) {
             alert("une erreur est survenue lors de l'envoi des données\nveuillez réessayer plus tard, svp.");
         }
     });
-    console.log("fin de la fonction transfer");
+    console.log("fin de la fonction postPasswordAndEmail");
 }
 
+
+function getElementsSignUp(dict) {
+    $.ajax({
+        url: `http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/${dict['xLastName']}/${dict['xFirstName']}`,
+        type: 'GET',
+        dataType: 'text',
+        success: function(response) {
+            console.log("all receive fine !");
+            connect = true;
+            $('surname').text('xLastName');
+            $('name').text('xFirstName');
+        },
+        error: () => {
+            alert("une erreur est survenue lors de l'envoi des données\nveuillez réessayer plus tard, svp.");
+            connect=false;
+        }
+    });
+}
 
 submitBtn.addEventListener('click', ()=> {
 
