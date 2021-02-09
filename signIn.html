@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>se connecter</title>
+    <link rel="stylesheet" type="text/css" href="signIn.css" />
+</head>
+<body>
+    <div id="header"> <!-- entête permettant l'affichage et le retrait du menu sur le côté, ainsi que le message de bienvenue pour l'utilisateur et son avatar-->
+        <div id="menuPicture">
+            <button>
+                <img src="01_annexes/images/primaryMenu.png" alt="menuPrincipal"/>
+            </button>
+        </div>
+        <div class="helloYou">
+            <p id='messageArrivee'> Bonjour, cher <span class="surname">nouvel</span> <span class="name">utilisateur</span>  !</p>
+        </div>
+        <!-- <div id="signIn">
+            <a href="signIn.html">Se connecter</a>
+        </div> -->
+    </div>
+    
+    <div id="containerPrimary">
+        <div id="menuRollOut">
+            <div class="accueil">
+                <div class="indexImg">
+                    <img src="01_annexes/images/homeImage.png" alt="Accueil">
+                </div>
+                <div class ="index">
+                    <a href = "index.html">Accueil</a>
+                </div>
+            </div>
+            <div class="logIn">
+                <div class="logInImage">
+                    <img src="01_annexes/images/logInImg.png" alt="s'inscrire">
+                </div>
+                <div class="logInText">
+                    <a href="logInRequest.html">S'inscrire</a>
+                </div>
+            </div>
+            <div class="historiques">
+                <div class="historiqueImg">
+                    <img src="01_annexes/images/loreImage.png" alt="l'historique">
+                </div>
+                <div class="historique">
+                    <a href ="history.html">Historique</a>
+                </div>
+            </div>
+            <div class ="parameters">
+                <div class="parametersImg">
+                    <img src="01_annexes/images/cog.png" alt="parametres">
+                </div>
+                <div class="parameter">
+                    <a href ="parameters.html#parameters">Parametres</a>
+                </div>
+            </div>
+            <div class="shareFacebook">
+                <div class="faceBookPicture">
+                    <img src="01_annexes/images/facebookImage.png" alt="partager sur Facebook">
+                </div>
+                <div class="fbShare">
+                    <a href ="<!--lien vers la page FB-->">Partager</a>
+                </div>
+            </div>
+            <div class="shareTwitter">
+    <!-- put the picture of Tweeter -->
+            </div>
+            <div class="shareOther">
+    <!--  put the picture to share the link on Internet -->
+            </div>
+        </div>
+        <div id="primaryScreen">
+            <h2>Se connecter</h2>
+            <form action="signInScript.js">
+                <div id="box">
+                    <div class="formulaire">
+                        <label for="email">e-mail:</label><br>
+                        <input type="text" id="email" name="email" value="trucmuche@machin.com"><br>
+                        <label for="pwd">Mot de passe:</label><br>
+                        <input type="text" id="pwd" name="pwd" value="8 caractères minimum..."><br><br>
+                    </div>
+                    <div class="btn">
+                        <input type="submit" value="se connecter">
+                    </div>
+                </div>
+            </form> 
+        </div>
+
+    </div>
+    <script src="scriptJavaS.js"></script>
+    <script src="signInScript.js"></script>
+
+</body>
+</html>
