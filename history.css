@@ -254,28 +254,30 @@ a {
     flex: auto;
     margin-left:6%;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     border: 2px black solid;
     border-radius: 45px/45px;
-    width:25%;
+    min-width:25%;
+    width:auto;
     height:auto;
     background: -webkit-linear-gradient(to right, #ffffffde, #6DD5FA, #2980B9);
     background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
 }
 
-.weatherPicture:{
+.weatherPicture:nth-child(1){
     margin: auto;
     align-self: center;
+    align-items: center;
 }
 .weatherPicture img{
-    margin: auto;
     width:auto;
     height:auto;
-    min-height: 0.5em;
+    min-height: 5em;
 }
 
-.lengendaryPicture:{
+.lengendaryPicture:nth-child(2){
     margin: auto;
     align-self: center;
 }
@@ -284,27 +286,30 @@ a {
     font-size: 0.7em;
 }
 
-#tempHumElementsContainer:{
+#tempHumElementsContainer:nth-child(3){
     display: flex;
+    flex:auto;
     flex-direction:row;
+    width:auto;
+    height:auto;
     justify-content: space-between;
 }
 
 .weatherTemperature{
-    /* margin-left:100px; */
+    margin-left:15px;
     align-self: flex-start;
     font-weight: bold;
     font-size: 0.8em;
 }
 
 .weatherHumidty{
-    /* margin-right:120px; */
+    margin-right:17px;
     align-self: flex-end;
     font-weight: bold;
     font-size: 0.8em;
 }
 
-#gdhContainer:{
+#gdhContainer:nth-child(4){
     display: flex;
     flex-direction:row;
     justify-content: space-between;

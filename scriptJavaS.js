@@ -14,7 +14,7 @@ script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
 //definition of a constant for URL requests
-const url = 'http://192.168.137.195:5000/API/RASPBERRY/SIGNUP'
+const url = 'http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/<string:xLastName>/<string:xFirstName>/<string:xCity>/<string:xEmail>/<string:xPassword>';
 
 //definition on variables used for sign up
 var nom = document.querySelector('#name');
@@ -141,7 +141,7 @@ submitBTN.addEventListener('click', ()=> {
 function transfer(key,value) {
     $.ajax({
     type: "POST",
-    url: "url",
+    url: url,
     data: key=value,
     dataType: "dataType",
     success: function (response) {
