@@ -71,11 +71,11 @@ function clearField(inputField) {
 
 
 let arrayOfInputElementsForDataBase = {
-    'LastName':surname.value,
-    'FirstName':nom.value,
-    'City':city.value,
-    'Email':eMail.value,
-    'Password':pwd.value
+    'xLastName':surname.value,
+    'xFirstName':nom.value,
+    'xCity':city.value,
+    'xEmail':eMail.value,
+    'xPassword':pwd.value
 };
 
 
@@ -95,19 +95,19 @@ submitBTN.addEventListener('click', ()=> {
 
     nom = document.querySelector('#name');
     isInputEmpty(nom);
-    arrayOfInputElementsForDataBase['FirstName']=nom.value;
+    arrayOfInputElementsForDataBase['xFirstName']=nom.value;
     surname = document.querySelector('#surname');
     isInputEmpty(surname);
-    arrayOfInputElementsForDataBase['LastName']=surname.value;
+    arrayOfInputElementsForDataBase['xLastName']=surname.value;
     city = document.querySelector('#city');
     isInputEmpty(city);
-    arrayOfInputElementsForDataBase['City']=city.value;
+    arrayOfInputElementsForDataBase['xCity']=city.value;
     eMail = document.querySelector('#mailAddress');
     isInputEmpty(eMail);
-    arrayOfInputElementsForDataBase['Email']=eMail.value;
+    arrayOfInputElementsForDataBase['xEmail']=eMail.value;
     pwd = document.querySelector('#pwd');
     isInputEmpty(pwd);
-    arrayOfInputElementsForDataBase['Password']=pwd.value;
+    arrayOfInputElementsForDataBase['xPassword']=pwd.value;
     if(pwd.value.length<8){
         msg = alert("veuillez entrer un mot de passe de 8 caractères minimum, svp.");
     }
@@ -128,14 +128,21 @@ submitBTN.addEventListener('click', ()=> {
 
     if(pwdCorrect==true && isEmpty ==false && cguCheck == true){
         console.log("conditions vérifiées");
-        pwd.value ="";
-        pwdVerif.value = "";
+        
+        clearField(nom);
+        clearField(surname);
+        clearField(city);
+        clearField(eMail);
+        clearField(pwd);
+        clearField(pwdVerif);
+        // pwd.value ="";
+        // pwdVerif.value = "";
         checkbox.checked = false;
-        for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
-            // console.log(key);
-            // console.log(value);
-            transfer(key, value);
-        }
+        // for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
+        //     transfer(key, value);
+        // }
+        console.log(arrayOfInputElementsForDataBase);
+        transfer(arrayOfInputElementsForDataBase);
     }
     else {
         console.log("conditions non vérifiées");
@@ -143,15 +150,15 @@ submitBTN.addEventListener('click', ()=> {
 });
 
 //Ajax request to POST elements when new sign up
-function transfer(key,value) {
-    console.log("entrée dans transfer"),
-    console.log(key),
-    console.log(value),
+function transfer(array) {
+    // console.log("entrée dans transfer"),
+    // console.log(key),
+    // console.log(value),
     $.ajax({
     type: "POST",
     url: 'http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/<string:xLastName>/<string:xFirstName>/<string:xCity>/<string:xEmail>/<string:xPassword>',
-    data: key=value,
-    dataType: 'string',
+    data: array,
+    // dataType: 'string',
     success: function (response) {
     console.log("all is working fine !");
     },
