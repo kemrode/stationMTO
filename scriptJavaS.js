@@ -137,7 +137,7 @@ submitBTN.addEventListener('click', ()=> {
     }
 });
 
-
+//Ajax request to POST elements when new sign up
 function transfer(key,value) {
     $.ajax({
     type: "POST",
@@ -152,17 +152,3 @@ function transfer(key,value) {
     }
 });
 }
-
-
-// $.ajax({
-//     type: "POST",
-//     url: "url",
-//     data: "LastName=surname",
-//     dataType: "dataType",
-//     success: function (response) {
-//         console.log("all is working fine !");
-//     },
-//     error: () => {
-//         alert("une erreur lors de l'envoi des données est survenue veuillez réessayer plus tard");
-//     }
-// });

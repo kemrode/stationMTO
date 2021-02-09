@@ -81,11 +81,11 @@ a {
 
 
 /* définition de la partie "Accueil" */
-#menuRollOut .accueil{
+.accueil{
     padding-top: 30px;
 }
 
-#menuRollOut .index{
+.index{
     padding-top: 15px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -93,10 +93,10 @@ a {
     text-decoration: none;
     color: black;
 }
-#menuRollOut .indexImg{
+.indexImg{
     float: left;
 }
-#menuRollOut .indexImg img{
+.indexImg img{
     padding-top: 12px;
     height: 1.2em;
 }
@@ -104,12 +104,12 @@ a {
 
 
 /* Définition de la partie "S'inscrire" */
-#menuRollOut .logIn{
+.logIn{
     padding-top : 15px;
     padding-right: 5px;
     height: 1.2em;
 }
-#menuRollOut .logInText{
+.logInText{
     padding-top: 15px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -117,10 +117,10 @@ a {
     text-decoration: none;
     color: black;
 }
-#menuRollOut .logInImage{
+.logInImage{
     float: left;
 }
-#menuRollOut .logInImage img{
+.logInImage img{
     padding-top: 10px;
     padding-right: 5px;
     height: 1.2em;
@@ -129,10 +129,10 @@ a {
 
 
 /* Définition de la partie "Historique" */
-#menuRollOut .historiques{
+.historiques{
     padding-top: 15px;
 }
-#menuRollOut .historique{
+.historique{
     padding-top: 30px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -140,10 +140,10 @@ a {
     text-decoration: none;
     color: black;
 }
-#menuRollOut .historiqueImg{
+.historiqueImg{
     float: left;
 }
-#menuRollOut .historiqueImg img{
+.historiqueImg img{
     padding-top: 25px;
     padding-right: 5px;
     height: 1.2em;
@@ -151,10 +151,10 @@ a {
 /* Fin de la définition de la partie "Historique" */
 
 /* Définition de la partie "Parametres */
-#menuRollOut .parameters{
+.parameters{
     padding-top: 15px;
 }
-#menuRollOut .parameter{
+.parameter{
     padding-top: 30px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -162,10 +162,10 @@ a {
     text-decoration: none;
     color: black;
 }
-#menuRollOut .parametersImg{
+.parametersImg{
     float: left;
 }
-#menuRollOut .parametersImg img{
+.parametersImg img{
     padding-top: 25px;
     padding-right: 5px;
     height: 1.2em;
@@ -173,10 +173,10 @@ a {
 /* Fin de la définition de la partie "Parametres" */
 
 /* Définition de la partie "Partage FB" */
-#menuRollOut .shareFacebook{
+.shareFacebook{
     padding-top: 15px;
 }
-#menuRollOut .fbShare{
+.fbShare{
     padding-top: 30px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -184,10 +184,10 @@ a {
     text-decoration: none;
     color: black;
 }
-#menuRollOut .faceBookPicture{
+.faceBookPicture{
     float: left;
 }
-#menuRollOut .faceBookPicture img{
+.faceBookPicture img{
     padding-top: 25px;
     padding-right: 5px;
     height: 1.2em;
@@ -196,18 +196,141 @@ a {
 
 /* Fin de la définition du Menu */
 
-
-footer{
+/*definition of the primary screen with historical elements*/
+#primaryContainer {
     display: flex;
-    margin: auto;
-    align-content: space-between;
-    background-color:black;
+    flex:auto;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 800px;
+    height: 100%;
+    background-color: blue;
+    justify-content: center;
 }
 
-.footer_choix {
+#historyBox {
     display: flex;
+    flex: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
-    background-color:black;
+    width:75%;
+    height:100%;
+    min-height: 800px;
+    border: 2px black solid;
+    background-color: red;
+}
+
+#firstLine {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 25%;
+    padding-top: 20px;
+    /* background-color: green; */
+    overflow-y: scroll;
+}
+
+
+
+#secondLine {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 25%;
+    padding-top: 100px;
+    /* background-color: yellow; */
+    overflow-y: scroll;
+}
+
+#box {
+    display: flex;
+    flex: auto;
+    margin-left:6%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    border: 2px black solid;
+    border-radius: 45px/45px;
+    width:25%;
+    height:auto;
+    background: -webkit-linear-gradient(to right, #ffffffde, #6DD5FA, #2980B9);
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+}
+
+.weatherPicture:{
+    margin: auto;
+    align-self: center;
+}
+.weatherPicture img{
+    margin: auto;
+    width:auto;
+    height:auto;
+    min-height: 0.5em;
+}
+
+.lengendaryPicture:{
+    margin: auto;
+    align-self: center;
+}
+.legendary{
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+#tempHumElementsContainer:{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.weatherTemperature{
+    /* margin-left:100px; */
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.weatherHumidty{
+    /* margin-right:120px; */
+    align-self: flex-end;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+#gdhContainer:{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    /* padding-bottom: 20px; */
+}
+
+.date{
+    align-self: flex-start;
+    /* padding-bottom: 20px;
+    margin-left: 65px; */
+}
+.groupDate{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 0.6em;
+}
+
+.hour{
+    align-self: flex-end;
+    /* padding-bottom: 20px;
+    margin-right: 65px; */
+}
+.groupHour{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 0.6em;
 }
 
 
