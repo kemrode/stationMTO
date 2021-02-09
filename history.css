@@ -32,10 +32,15 @@ a {
 }
 
 
-.avatarUser{
+#signIn{
     max-width: 12.5%;
     max-height: 12.5%;
-    background-color: red;
+}
+
+#signIn a {
+    color: antiquewhite;
+    font-style: italic;
+    font-size: 0.8em;
 }
 
 .menuPicture{
@@ -378,7 +383,7 @@ a {
         display: flex;
         flex-wrap: nowrap;
     }
-    .avatarUser {
+    #signIn {
         max-width: 12.5%;
         min-width: 12.5%;
         height: auto;
