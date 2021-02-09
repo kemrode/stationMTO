@@ -138,11 +138,11 @@ submitBTN.addEventListener('click', ()=> {
         // pwd.value ="";
         // pwdVerif.value = "";
         checkbox.checked = false;
-        // for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
-        //     transfer(key, value);
-        // }
+        for(const [key, value] of Object.entries(arrayOfInputElementsForDataBase)){
+            transfer(key, value);
+        }
         console.log(arrayOfInputElementsForDataBase);
-        transfer(arrayOfInputElementsForDataBase);
+        // transfer(arrayOfInputElementsForDataBase);
     }
     else {
         console.log("conditions non vérifiées");
@@ -150,15 +150,15 @@ submitBTN.addEventListener('click', ()=> {
 });
 
 //Ajax request to POST elements when new sign up
-function transfer(array) {
+function transfer(key, value) {
     // console.log("entrée dans transfer"),
     // console.log(key),
     // console.log(value),
     $.ajax({
     type: "POST",
     url: 'http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/<string:xLastName>/<string:xFirstName>/<string:xCity>/<string:xEmail>/<string:xPassword>',
-    data: array,
-    // dataType: 'string',
+    data: key = value,
+    dataType: 'text',
     success: function (response) {
     console.log("all is working fine !");
     },
