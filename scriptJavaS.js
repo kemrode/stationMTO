@@ -143,7 +143,7 @@ function transfer(key,value) {
     type: "POST",
     url: url,
     data: key=value,
-    dataType: "dataType",
+    dataType: String,
     success: function (response) {
         console.log("all is working fine !");
     },
