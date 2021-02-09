@@ -266,7 +266,7 @@ a {
     background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
 }
 
-#legendaryAndPicture {
+/* #legendaryAndPicture {
     margin:auto;
     width:auto;
     height: auto;
@@ -274,11 +274,11 @@ a {
     /* flex: auto; */
     flex-direction: row;
 
-}
+} */
 
-.weatherPicture:{
+.weatherPicture:nth-child(1){
     margin: auto;
-    width: auto;
+    /* width: auto; */
     align-self: center;
 }
 .weatherPicture img{
@@ -287,10 +287,10 @@ a {
     min-height: 5em;
 }
 
-.lengendaryPicture:{
+.lengendaryPicture:nth-child(2){
     margin: auto;
-    width: auto;
-    height: 25%;
+    /* width: auto;
+    height: 25%; */
     align-self: center;
 }
 .legendary{
@@ -298,9 +298,9 @@ a {
     font-size: 0.7em;
 }
 
-#tempHumElementsContainer:{
+#tempHumElementsContainer:nth-child(3){
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     width:auto;
     height:auto;
     align-items: flex-start;
@@ -311,26 +311,29 @@ a {
     align-self: flex-start;
     font-weight: bold;
     font-size: 0.8em;
+    padding-left: 10px;
 }
 
 .weatherHumidty{
-    align-self: flex-end;
+    align-self: flex-start;
     font-weight: bold;
     font-size: 0.8em;
+    padding-left: 10px;
 }
 
-#gdhContainer:{
+#gdhContainer:nth-child(4){
     display: flex;
     flex: auto;
-    flex-direction:row;
-    align-items: flex-end;
+    flex-direction:column;
+    /* align-items: flex-end; */
     justify-content: space-between;
 }
 
 .date{
-    align-self: flex-start;
-    /* padding-bottom: 20px;
-    margin-left: 65px; */
+    display: flex;
+    flex:auto;
+    align-self: flex-end;
+    padding-right: 10px;
 }
 .groupDate{
     font-weight: bold;
@@ -339,9 +342,10 @@ a {
 }
 
 .hour{
+    display:flex;
+    flex:auto;
     align-self: flex-end;
-    /* padding-bottom: 20px;
-    margin-right: 65px; */
+    padding-right: 10px;
 }
 .groupHour{
     font-weight: bold;
