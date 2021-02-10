@@ -288,8 +288,8 @@ a {
 }
 .weatherPicture img{
     width:auto;
-    height:auto;
-    min-height: 5em;
+    height:5em;
+    /* min-height: 5em; */
 }
 
 .lengendaryPicture:nth-child(2){
@@ -369,7 +369,7 @@ a {
     }
 
     #containerPrimary {
-        width: auto;
+        width: 100%;
         height: auto;
     }
 
@@ -384,6 +384,11 @@ a {
         max-width: 12.5%;
         min-width: 12.5%;
         height: auto;
+        padding-right: 10px;
+    }
+
+    #signIn a{
+        font-size: 0.4em;
     }
 
     .menuPicture {
@@ -438,155 +443,73 @@ a {
     
     /*definition of the primary screen with historical elements*/
     #primaryContainer {
-        display: flex;
-        flex:auto;
-        flex-direction: column;
-        width: inherit;
         height:auto;
-        height: 100%;
-        justify-content: center;
+        /* width: 100%; */
     }
     
     #historyBox {
-        display: flex;
-        flex: auto;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-self: center;
-        width:75%;
-        height:inherit;
-        min-height: 1100px;
-        padding-top: 25px;
-        background-color: #B3B6B7;
-        border: 2px black solid;
+        width:100%;
+        /* height:auto; */
     }
     
     #firstLine {
-        display: flex;
-        flex: auto;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        width: inherit;
+        /* width: 100%; */
         height: 50%;
-        padding-top: 20px;
-        background-color: #F0F3F4;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        position: absolute;
-        top: 200px;
-        padding-bottom: 20px;
-        border: 1px black solid;
     }
     
-    
-    
     #secondLine {
-        display: flex;
-        flex: auto;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        width:inherit;
+        /* width: 100%; */
         height: 50%;
-        padding-top: 100px;
-        background-color: #F0F3F4;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        position: absolute;
-        top: 700px;
-        padding-bottom: 20px;
-        border: 1px black solid;
     }
     
     #box {
-        display: flex;
-        flex: auto;
-        margin-left:6%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: stretch;
-        border: 2px black solid;
-        border-radius: 45px/45px;
-        min-width:25%;
-        width:auto;
+        /* width:250px; */
+        width: 100%;
         height:auto;
-        background: -webkit-linear-gradient(to right, #ffffffde, #6DD5FA, #2980B9);
-        background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
     }
     
-    .weatherPicture:nth-child(1){
-        margin: auto;
-        align-self: center;
-    }
     .weatherPicture img{
         width:auto;
         height:auto;
-        min-height: 5em;
+        max-height: 2em;
+        /* display: none; */
     }
     
-    .lengendaryPicture:nth-child(2){
-        margin: auto;
-        align-self: center;
-    }
     .legendary{
-        font-weight: bold;
-        font-size: 0.7em;
+        font-size: 0.4em;
     }
     
     #tempHumElementsContainer:nth-child(3){
-        display: flex;
-        flex-direction:column;
-        width:auto;
+        width:100%;
         height:auto;
-        align-items: flex-start;
-        justify-content: space-between;
+        justify-content:flex-start;
     }
     
     .weatherTemperature{
-        align-self: flex-start;
-        font-weight: bold;
-        font-size: 0.8em;
-        padding-left: 10px;
+        font-size: 0.6em;
     }
     
     .weatherHumidty{
-        align-self: flex-start;
-        font-weight: bold;
-        font-size: 0.8em;
-        padding-left: 10px;
+        font-size: 0.6em;
     }
     
-    #gdhContainer:nth-child(4){
-        display: flex;
-        flex: auto;
-        flex-direction:column;
-        justify-content: space-between;
+    #gdhContainer {
+        justify-content: flex-end;
     }
     
-    .date{
-        display: flex;
-        flex:auto;
-        align-self: flex-end;
-        padding-right: 10px;
+    .date {
+        margin-left: 15px;
     }
+
     .groupDate{
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 0.6em;
+        font-size: 0.4em;
     }
     
-    .hour{
-        display:flex;
-        flex:auto;
-        align-self: flex-end;
-        padding-right: 10px;
+    .hour {
+        margin-right: 20px;
     }
+
     .groupHour{
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 0.6em;
+        font-size: 0.4em;
     }
 }
