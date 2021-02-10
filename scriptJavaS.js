@@ -1,4 +1,6 @@
+//variables
 let userName = document.querySelector('.surname');
+let disco = document.querySelector('.disconnect');
 
 // definition of variables about the menu roll out type
 let menuBtn = document.querySelector('button');
@@ -29,6 +31,15 @@ if(localStorage.getItem('userName')){
 }
 
 
+//function to sign out
+function signOut() {
+    if(confirm("Souhaitez-vous vous déconnecter ? Réellement ?")){
+        localStorage.clear();
+        userName.textContent="nouvel utilisateur";
+    }
+}
+
+
 //function to change display of the menuRollOut
 primaryMenu.style.display="none";
 
@@ -47,10 +58,8 @@ menuBtn.addEventListener('click', ()=> {
 });
 
 
-//function to share on Facebook
-
-// FB.ui({
-//     method: 'share',
-//     href:
-// })
+disco.addEventListener('click', ()=>{
+    console.log("entrée dans la fonction");
+    signOut();
+});
 

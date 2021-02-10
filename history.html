@@ -17,7 +17,10 @@
             <p id='messageArrivee'> Bonjour, cher <span class="surname">nouvel utilisateur</span>  !</p>
         </div>
         <div id="signIn">
-            <a href="signIn.html">Se connecter</a>
+            <a href="signIn.html">Se connecter</a><br>
+            <button class="disconnect">
+                <p>Se déconnecter</p>
+            </button>
         </div>
     </div>
     <div id="containerPrimary">
@@ -333,11 +336,66 @@
     
                     </div>
                 </div>
+                
+            </div>
+            <div id="chartContainer">
             </div>
         </div>
         
         <script src="history.js"></script>
-    
-    
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script type="text/javascript">
+
+            window.onload = function () {
+                var tempPoints = [{label: 1,y: 15},{label: 2,y: 13},{label: 3,y: 10},{label: 4,y: 7},{label: 5,y: 8},
+                {label: 6,y: 10},{label: 7,y: 11},{label: 8,y: 13},{label: 9,y: 15},{label: 10,y: 5}];
+                var hygroPoints =  [{label: 1,y: 20},{label: 2,y: 22},{label: 3,y: 30},{label: 4,y: 41},{label: 5,y: 42},
+                {label: 6,y: 38},{label: 7,y: 26},{label: 8,y: 27},{label: 9,y: 31},{label: 10,y: 46}];
+                var chart = new CanvasJS.Chart("chartContainer", {
+
+                    //theme: "light",
+                    //chart.option.axisX = { suffix: "/02/2021"},
+                    //chart.option.title = { text:"Relevés des températures et de l'hygrométrie" }
+                    title:{
+                        text: "Relevés de températures et d'hygrométrie"              
+                    },
+                    data: [{
+                        // Temperatures "relevées"
+                        type: "line",
+                        name: "Températures",
+                        showInLegend: true,
+                        dataPoints: tempPoints
+                    } ,            
+                    {
+                        // Relevés d'hygrométrie
+                        type: "line",
+                        name: "Hygrométrie",
+                        showInLegend: true,
+                        dataPoints: hygroPoints
+                    }
+                    ],
+                    axisX: {
+                        suffix: "/02/2021"
+                    }
+                });
+                chart.render();
+
+                var yUpDate= 10, updateCount = 0;
+                var upDateChart = () => {
+                    yUpDate = yUpDate + Math.round(5 + Math.random()*(-5-5));
+                    updateCount++;
+
+                    tempPoints.push({
+                        y: yVal
+                    });
+
+                    chart.options.title.text = "Update" + updateCount;
+                    chart.render();
+                };
+
+                //function to set interval of time before to update
+                setInterval(function(){upDateChart()}, 86400);
+            }
+            </script>
 </body>
 </html>

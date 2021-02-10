@@ -9,6 +9,14 @@ body{
     background-repeat: no-repeat;
 }
 
+.disconnect {
+    border: none;
+    font-size: 0.9em;
+    color: red;
+    font-style: normal;
+    background: none;
+}
+
 a {
     color : black;
     text-decoration: none;

@@ -58,7 +58,7 @@ eMail.addEventListener('click', ()=> {
 function postPasswordAndEmail(dictSignIn) {
     $.ajax({
         type: "GET",
-        url: `http://192.168.137.176:5000/API/RASPBERRY/SIGNIN/${dictSignIn['xEmail']}/${dictSignIn['xPassword']}`,
+        url: `http://192.168.137.24:5000/API/RASPBERRY/SIGNIN/${dictSignIn['xEmail']}/${dictSignIn['xPassword']}`,
         success: function (response) {
             console.log("all is working fine !");
             userName(response);
@@ -91,4 +91,3 @@ function userName(userNameByGET) {
     userStorage = localStorage.setItem('userName', userNameByGET);
     user.textContent = localStorage.getItem('userName');
 }
-
