@@ -1,3 +1,5 @@
+let userName = document.querySelector('.surname');
+
 // definition of variables about the menu roll out type
 let menuBtn = document.querySelector('button');
 let primaryMenu = document.querySelector('#menuRollOut');
@@ -12,6 +14,10 @@ var script = document.createElement('jQuery');
 script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
+
+if(localStorage.getItem('userName')){
+    userName.textContent = localStorage.getItem('userName');
+}
 
 //function to know if the user is logged or not
 () => {
