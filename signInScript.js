@@ -37,9 +37,10 @@ eMail.addEventListener('click', ()=> {
 function postPasswordAndEmail(dict) {
     $.ajax({
         type: "POST",
-        url: `http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/${dict['xEmail']}/${dict['xPassword']}`,
+        url: `http://192.168.137.176:5000/API/RASPBERRY/SIGNIN/${dict['xEmail']}/${dict['xPassword']}`,
         success: function (response) {
             console.log("all is working fine !");
+            return connect=true;
         },
         error: ()=> {
             console.log(JSON.stringify(dict));
@@ -52,14 +53,13 @@ function postPasswordAndEmail(dict) {
 
 function getElementsSignUp(dict) {
     $.ajax({
-        url: `http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/${dict['xLastName']}/${dict['xFirstName']}`,
+        url: `http://192.168.137.176:5000/API/RASPBERRY/SIGNUP/${dict['PRENOM']}`,
         type: 'GET',
         dataType: 'text',
         success: function(response) {
             console.log("all receive fine !");
             connect = true;
-            $('surname').text('xLastName');
-            $('name').text('xFirstName');
+            $('PRENOM').text('xLastName');
         },
         error: () => {
             alert("une erreur est survenue lors de l'envoi des données\nveuillez réessayer plus tard, svp.");
@@ -78,5 +78,13 @@ submitBtn.addEventListener('click', ()=> {
 
     console.log(dictSignIn);
     postPasswordAndEmail(dictSignIn);
+    console.log(connect);
+    if(connect){
+        getElementsSignUp(dict);
+    }
+    else {
+        alert("problème détecté");
+    }
+    console.log(dict);
 });
 

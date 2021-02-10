@@ -41,3 +41,10 @@ menuBtn.addEventListener('click', ()=> {
 });
 
 
+//function to share on Facebook
+
+// FB.ui({
+//     method: 'share',
+//     href:
+// })
+
