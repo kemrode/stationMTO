@@ -3,6 +3,7 @@ body{
     font-size: 30px;
     height:auto;
     width:100%;
+    /* min-height:1024px; */
     min-height:1280px;
     background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
     background-repeat: no-repeat;
@@ -40,7 +41,7 @@ a {
 #signIn a {
     color: antiquewhite;
     font-style: italic;
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 .menuPicture{
@@ -80,17 +81,16 @@ a {
     min-height: 1000px;
     height: auto;
     display: none;
-    float: left;
-    z-index: 2;
+    border:3px black;
 }
 
 
 /* définition de la partie "Accueil" */
-.accueil{
+#menuRollOut .accueil{
     padding-top: 30px;
 }
 
-.index{
+#menuRollOut .index{
     padding-top: 15px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -98,10 +98,10 @@ a {
     text-decoration: none;
     color: black;
 }
-.indexImg{
+#menuRollOut .indexImg{
     float: left;
 }
-.indexImg img{
+#menuRollOut .indexImg img{
     padding-top: 12px;
     height: 1.2em;
 }
@@ -109,12 +109,12 @@ a {
 
 
 /* Définition de la partie "S'inscrire" */
-.logIn{
+#menuRollOut .logIn{
     padding-top : 15px;
     padding-right: 5px;
     height: 1.2em;
 }
-.logInText{
+#menuRollOut .logInText{
     padding-top: 15px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -122,10 +122,10 @@ a {
     text-decoration: none;
     color: black;
 }
-.logInImage{
+#menuRollOut .logInImage{
     float: left;
 }
-.logInImage img{
+#menuRollOut .logInImage img{
     padding-top: 10px;
     padding-right: 5px;
     height: 1.2em;
@@ -134,10 +134,10 @@ a {
 
 
 /* Définition de la partie "Historique" */
-.historiques{
+#menuRollOut .historiques{
     padding-top: 15px;
 }
-.historique{
+#menuRollOut .historique{
     padding-top: 30px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -145,10 +145,10 @@ a {
     text-decoration: none;
     color: black;
 }
-.historiqueImg{
+#menuRollOut .historiqueImg{
     float: left;
 }
-.historiqueImg img{
+#menuRollOut .historiqueImg img{
     padding-top: 25px;
     padding-right: 5px;
     height: 1.2em;
@@ -156,10 +156,10 @@ a {
 /* Fin de la définition de la partie "Historique" */
 
 /* Définition de la partie "Parametres */
-.parameters{
+#menuRollOut .parameters{
     padding-top: 15px;
 }
-.parameter{
+#menuRollOut .parameter{
     padding-top: 30px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -167,10 +167,10 @@ a {
     text-decoration: none;
     color: black;
 }
-.parametersImg{
+#menuRollOut .parametersImg{
     float: left;
 }
-.parametersImg img{
+#menuRollOut .parametersImg img{
     padding-top: 25px;
     padding-right: 5px;
     height: 1.2em;
@@ -178,10 +178,10 @@ a {
 /* Fin de la définition de la partie "Parametres" */
 
 /* Définition de la partie "Partage FB" */
-.shareFacebook{
+#menuRollOut .shareFacebook{
     padding-top: 15px;
 }
-.fbShare{
+#menuRollOut .fbShare{
     padding-top: 30px;
     padding-left: 15px;
     font-size: 0.8em;
@@ -189,10 +189,10 @@ a {
     text-decoration: none;
     color: black;
 }
-.faceBookPicture{
+#menuRollOut .faceBookPicture{
     float: left;
 }
-.faceBookPicture img{
+#menuRollOut .faceBookPicture img{
     padding-top: 25px;
     padding-right: 5px;
     height: 1.2em;
@@ -208,12 +208,8 @@ a {
     flex-direction: column;
     width: inherit;
     height:auto;
-    /* min-height: 800px;*/
     height: 100%;
-    /* background-color: blue; */
     justify-content: center;
-
-    
 }
 
 #historyBox {
@@ -366,6 +362,7 @@ a {
 /* media-querries */
 
 @media (max-width:1024px) {
+
     body {
         width: auto;
         height: auto;
@@ -436,4 +433,160 @@ a {
     }
     /* Fin de la définition du Menu */
     
+    
+    
+    
+    /*definition of the primary screen with historical elements*/
+    #primaryContainer {
+        display: flex;
+        flex:auto;
+        flex-direction: column;
+        width: inherit;
+        height:auto;
+        height: 100%;
+        justify-content: center;
+    }
+    
+    #historyBox {
+        display: flex;
+        flex: auto;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-self: center;
+        width:75%;
+        height:inherit;
+        min-height: 1100px;
+        padding-top: 25px;
+        background-color: #B3B6B7;
+        border: 2px black solid;
+    }
+    
+    #firstLine {
+        display: flex;
+        flex: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: inherit;
+        height: 50%;
+        padding-top: 20px;
+        background-color: #F0F3F4;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        position: absolute;
+        top: 200px;
+        padding-bottom: 20px;
+        border: 1px black solid;
+    }
+    
+    
+    
+    #secondLine {
+        display: flex;
+        flex: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width:inherit;
+        height: 50%;
+        padding-top: 100px;
+        background-color: #F0F3F4;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        position: absolute;
+        top: 700px;
+        padding-bottom: 20px;
+        border: 1px black solid;
+    }
+    
+    #box {
+        display: flex;
+        flex: auto;
+        margin-left:6%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        border: 2px black solid;
+        border-radius: 45px/45px;
+        min-width:25%;
+        width:auto;
+        height:auto;
+        background: -webkit-linear-gradient(to right, #ffffffde, #6DD5FA, #2980B9);
+        background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+    }
+    
+    .weatherPicture:nth-child(1){
+        margin: auto;
+        align-self: center;
+    }
+    .weatherPicture img{
+        width:auto;
+        height:auto;
+        min-height: 5em;
+    }
+    
+    .lengendaryPicture:nth-child(2){
+        margin: auto;
+        align-self: center;
+    }
+    .legendary{
+        font-weight: bold;
+        font-size: 0.7em;
+    }
+    
+    #tempHumElementsContainer:nth-child(3){
+        display: flex;
+        flex-direction:column;
+        width:auto;
+        height:auto;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    
+    .weatherTemperature{
+        align-self: flex-start;
+        font-weight: bold;
+        font-size: 0.8em;
+        padding-left: 10px;
+    }
+    
+    .weatherHumidty{
+        align-self: flex-start;
+        font-weight: bold;
+        font-size: 0.8em;
+        padding-left: 10px;
+    }
+    
+    #gdhContainer:nth-child(4){
+        display: flex;
+        flex: auto;
+        flex-direction:column;
+        justify-content: space-between;
+    }
+    
+    .date{
+        display: flex;
+        flex:auto;
+        align-self: flex-end;
+        padding-right: 10px;
+    }
+    .groupDate{
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 0.6em;
+    }
+    
+    .hour{
+        display:flex;
+        flex:auto;
+        align-self: flex-end;
+        padding-right: 10px;
+    }
+    .groupHour{
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 0.6em;
+    }
 }
