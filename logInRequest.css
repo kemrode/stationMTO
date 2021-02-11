@@ -8,6 +8,7 @@ body{
     background-repeat: no-repeat;
 }
 
+
 .disconnect {
     border: none;
     font-size: 0.6em;
@@ -66,7 +67,6 @@ a {
     flex:auto;
     max-width:75%;
     padding-left: 25px;
-    /* margin-left: 10px; retrouver comment faire pour mettre une marge à gauche -- flexbox ???  */
 }
 
 /* fin de la définition des propriétés du HEADER */

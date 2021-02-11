@@ -8,7 +8,7 @@
     <script class="jQuery" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <div id="header"> <!-- entête permettant l'affichage et le retrait du menu sur le côté, ainsi que le message de bienvenue pour l'utilisateur et son avatar-->
+    <div id="header"> 
         <div id="menuPicture">
             <button>
                 <img src="01_annexes/images/primaryMenu.png" alt="menuPrincipal"/>
@@ -50,22 +50,14 @@
                     <a href ="history.html">Historique</a>
                 </div>
             </div>
-            <div class ="parameters">
-                <div class="parametersImg">
-                    <img src="01_annexes/images/cog.png">
-                </div>
-                <div class="parameter">
-                    <a href ="parameters.html#parameters">Parametres</a>
-                </div>
-            </div>
-            <div class="shareFacebook">
+            <!-- <div class="shareFacebook">
                 <div class="faceBookPicture">
                     <img src="01_annexes/images/facebookImage.png">
-                </div>
-                <div class="fbShare">
-                    <a href ="<!--lien vers la page FB-->">Partager</a>
-                </div>
-            </div>
+                </div> -->
+                <!-- <div class="fbShare"> -->
+                    <!-- <a href ="">Partager</a> -->
+                <!-- </div> -->
+            <!-- </div> -->
             <div class="shareTwitter">
     <!-- put the picture of Tweeter -->
             </div>
@@ -102,7 +94,7 @@
                 </div>
                 <div id="cgu">
                     <input type="checkbox" id="cguCheckbox" name="cgu" value="true">
-                    <label for="cgu">J'accepte les termes et conditions générales d'utilisation.</label>
+                    <label for="cgu">J'accepte les <a href="termes.html">termes</a> et conditions générales d'utilisation.</label>
                 </div>
                 <div id="submitBTN">
                     <button class="submitBTN">Envoyer</button>

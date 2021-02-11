@@ -4,7 +4,6 @@ let primaryMenu = document.querySelector('#menuRollOut');
 let menuHidden=true;
 
 // //creation of the cookie
-// document.cookie = 'surname = utilisateur';
 var userStorage="";
 
 //bring back the script to use jQuery
@@ -62,6 +61,8 @@ function postPasswordAndEmail(dictSignIn) {
         success: function (response) {
             console.log("all is working fine !");
             userName(response);
+            let user = localStorage.getItem('username');
+            let msg = alert("Bonjour, vous êtes maintenant connecté !")
         },
         error: ()=> {
             alert("une erreur est survenue lors de l'envoi des données\nveuillez réessayer plus tard, svp.");
@@ -72,21 +73,14 @@ function postPasswordAndEmail(dictSignIn) {
 
 
 submitBtn.addEventListener('click', ()=> {
-
-    
-    var connect = false;
-
     eMail = document.querySelector('#email');
     pwd = document.querySelector('#pwd');
-
     dictSignIn['xEmail']=eMail.value;
     dictSignIn['xPassword']=pwd.value;
-
     postPasswordAndEmail(dictSignIn);
 });
 
 function userName(userNameByGET) {
-
     let user = document.querySelector('.surname');
     userStorage = localStorage.setItem('userName', userNameByGET);
     user.textContent = localStorage.getItem('userName');

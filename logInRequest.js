@@ -30,6 +30,7 @@ var pwdVerif = document.querySelector('#pwdVerif');
 var isEmpty=true;
 var submitBTN = document.querySelector('#submitBTN');
 let cguCheck = false;
+let terms = document.querySelector('.termes');
 
 //condition for know the name of user if sign in
 if(localStorage.getItem('userName')){
@@ -52,6 +53,11 @@ menuBtn.addEventListener('click', ()=> {
         menuHidden = true;
     }
 });
+
+//function to read cgu when click on "terms"
+terms.addEventListener('click', ()=>{
+    terms.display='block';
+})
 
 
 //function to check if the field is empty or not :

@@ -3,7 +3,6 @@ body{
     font-size: 30px;
     height:auto;
     width:100%;
-    /* min-height:1024px; */
     min-height:1280px;
     background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
     background-repeat: no-repeat;
@@ -59,7 +58,6 @@ a {
     flex:auto;
     max-width:75%;
     padding-left: 25px;
-    /* margin-left: 10px; retrouver comment faire pour mettre une marge à gauche -- flexbox ???  */
 }
 
 /* fin de la définition des propriétés du HEADER */
@@ -211,9 +209,7 @@ a {
     margin-top: 80px;
     align-items: center;
     justify-self: center;
-    /* background-color: red; */
     position: absolute;
-    /* z-index:2; */
 }
 
 #box {
@@ -232,13 +228,9 @@ h2 {
     flex: auto;
     font-size:1.5em;
     font-style: italic;
-    /* background-color: green; */
 }
 
 form {
-    /* display: flex;
-    flex: auto; */
-    /* flex-wrap: wrap; */
     width: 300px;
     height: 100%;
     border: 1px black solid;
@@ -257,10 +249,7 @@ label {
     font-style: italic;
     color:#B3B6B7;
 }
-/* input {
-    font-style: italic;
-    color:#B3B6B7;
-} */
+
 
 .btn {
     display: flex;

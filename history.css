@@ -3,7 +3,6 @@ body{
     font-size: 30px;
     height:auto;
     width:100%;
-    /* min-height:1024px; */
     min-height:1280px;
     background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
     background-repeat: no-repeat;
@@ -76,7 +75,6 @@ a {
     flex:auto;
     max-width:75%;
     padding-left: 25px;
-    /* margin-left: 10px; retrouver comment faire pour mettre une marge à gauche -- flexbox ???  */
 }
 
 /* fin de la définition des propriétés du HEADER */
@@ -263,7 +261,6 @@ a {
 }
 
 
-
 #secondLine {
     display: flex;
     flex: auto;
@@ -306,7 +303,6 @@ a {
 .weatherPicture img{
     width:auto;
     height:5em;
-    /* min-height: 5em; */
 }
 
 .lengendaryPicture:nth-child(2){
@@ -373,7 +369,6 @@ a {
 }
 
 
-
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Définition du responsiv */
 /* media-querries */
@@ -397,7 +392,7 @@ a {
         height: auto;
     }
 
-        /* définition des propriétés du HEADER, à compléter */
+    /* définition des propriétés du HEADER, à compléter */
     #header {
         width: auto;
         height: auto;
@@ -465,33 +460,26 @@ a {
         height: auto;
     }
     /* Fin de la définition du Menu */
-    
-    
-    
+
     
     /*definition of the primary screen with historical elements*/
     #primaryContainer {
         height:auto;
-        /* width: 100%; */
     }
     
     #historyBox {
         width:100%;
-        /* height:auto; */
     }
     
     #firstLine {
-        /* width: 100%; */
         height: 50%;
     }
     
     #secondLine {
-        /* width: 100%; */
         height: 50%;
     }
     
     #box {
-        /* width:250px; */
         width: 100%;
         height:auto;
     }
@@ -500,7 +488,6 @@ a {
         width:auto;
         height:auto;
         max-height: 2em;
-        /* display: none; */
     }
     
     .legendary{

@@ -56,7 +56,6 @@ menuBtn.addEventListener('click', ()=> {
         primaryMenu.style.width='8em';
         primaryMenu.style.zIndex=1;
         menuHidden = false;
-        bringDataOpenWeatherMap(city);
     }
     else {
         primaryMenu.style.display="none";
@@ -64,16 +63,19 @@ menuBtn.addEventListener('click', ()=> {
     }
 });
 
+window.onload = function () {
+    bringDataOpenWeatherMap(city);
+}
+
 
 disco.addEventListener('click', ()=>{
     console.log("entrée dans la fonction");
     signOut();
+    alert("Vous êtes déconnecté...")
 });
 
+
 //Bring back informations from Open weather map for MTO data
-
-
-
 function bringDataOpenWeatherMap(city) {
     $.ajax({
         type: 'GET',
@@ -93,7 +95,6 @@ function bringDataOpenWeatherMap(city) {
 
 function pressureResult(pressure) {
 
-    // let img = document.querySelector('.weatherPict').src="01_annexes/images/sunExample.png";
     let img = document.getElementsByClassName('.weatherPict');
     let legend = document.querySelector('.legendary');
     
