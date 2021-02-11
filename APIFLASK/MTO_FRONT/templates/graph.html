@@ -1,0 +1,7 @@
+{% block content %}
+    {%- for releve in content_list %}
+        xDATEADD = {{ releve['xDATEADD'] }} <br>
+        xMOYTEMP = {{ releve['xMOYTEMP'] }} <br>
+        xMOYHUMI = {{ releve['xMOYHUMI'] }} <br> <br> <br>
+    {%- endfor %}
+{%- endblock %}
