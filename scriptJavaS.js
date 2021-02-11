@@ -83,6 +83,7 @@ function bringDataOpenWeatherMap(city) {
             console.log("It's working well !");
             let pressure = response.main.pressure;
             console.log(pressure);
+            pressureResult(pressure);
         },
         error: () => {
             alert("Un problème est survenu !");
@@ -91,5 +92,37 @@ function bringDataOpenWeatherMap(city) {
 }
 
 function pressureResult(pressure) {
+
+    // let img = document.querySelector('.weatherPict').src="01_annexes/images/sunExample.png";
+    let img = document.getElementsByClassName('.weatherPict');
+    let legend = document.querySelector('.legendary');
     
+        console.log(typeof(pressure));
+        console.log(typeof(1020));
+
+    switch(true){
+
+        case pressure>1020 :
+            $(".weatherPict").attr('src', '01_annexes/images/img/soleil.png');
+            legend.textContent = "Beau temps";
+            break;
+        
+        case 1013<pressure && pressure<1019:
+            $(".weatherPict").attr('src', '01_annexes/images/img/soleil.png');
+            legend.textContent = "Assez beau\navec quelques nuages";
+            break;
+
+        case 1006<pressure && pressure<1012:
+            $(".weatherPict").attr('src', '01_annexes/images/img/pluie.png');
+            legend.textContent = "Risque de neige ou de giboulée";
+            break;
+
+        case 0<pressure && pressure<1005:
+            $(".weatherPict").attr('src', '01_annexes/images/img/neige.png');
+            legend.textContent = "Neige et vent pouvant\nêtre violent";
+            break;
+
+        default:
+            alert("données non prise en charge\nVeuillez contacter un administrateur\nEn vous remerciant.");
+    };
 }
