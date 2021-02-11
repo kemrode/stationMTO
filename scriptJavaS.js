@@ -39,6 +39,12 @@ function signOut() {
     }
 }
 
+//
+var lat = 49.38251;
+var long = 1.07523 ;
+let city = "rouen";
+const url = "https://api.openweathermap.org/data/2.5/weather?lat="+lat +"&long="+long+"&appid=373803ed9fca2043e13ba7691a33122e&units=metric";
+//
 
 //function to change display of the menuRollOut
 primaryMenu.style.display="none";
@@ -50,6 +56,7 @@ menuBtn.addEventListener('click', ()=> {
         primaryMenu.style.width='8em';
         primaryMenu.style.zIndex=1;
         menuHidden = false;
+        bringDataOpenWeatherMap(city);
     }
     else {
         primaryMenu.style.display="none";
@@ -63,3 +70,26 @@ disco.addEventListener('click', ()=>{
     signOut();
 });
 
+//Bring back informations from Open weather map for MTO data
+
+
+
+function bringDataOpenWeatherMap(city) {
+    $.ajax({
+        type: 'GET',
+        url: "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=373803ed9fca2043e13ba7691a33122e&units=metric",
+        dataType : 'json',
+        success: (response) => {
+            console.log("It's working well !");
+            let pressure = response.main.pressure;
+            console.log(pressure);
+        },
+        error: () => {
+            alert("Un problème est survenu !");
+        }
+    })
+}
+
+function pressureResult(pressure) {
+    
+}

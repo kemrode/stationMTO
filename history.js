@@ -15,30 +15,6 @@ script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
-//import myChartJS to use it to create graph
-// import Chart from 'chart.js';
-// var myChart = new Chart(ctx, 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js');
-
-//make a chart
-// var ctx = document.getElementById('graph').getContext('2d');
-// var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    // type: 'line',
-
-    // The data for our dataset
-//     data: {
-//         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-//         datasets: [{
-//             label: 'My First dataset',
-//             backgroundColor: 'rgb(255, 99, 132)',
-//             borderColor: 'rgb(255, 99, 132)',
-//             data: [0, 10, 5, 2, 20, 30, 45]
-//         }]
-//     },
-
-//     // Configuration options go here
-//     options: {}
-// });
 
 if(localStorage.getItem('userName')){
     userName.textContent = localStorage.getItem('userName');
@@ -71,3 +47,33 @@ menuBtn.addEventListener('click', ()=> {
     }
 });
 
+
+//Def. of a dictTemp
+var dictTemp = {};
+
+//Def. of a dictHygro
+var dictHygro = {};
+
+//Ajax request for chart
+function getElementsFromAPI() {
+    $.ajax({
+        type: "GET",
+        url: `http://192.168.137.24:5000/API/RASPBERRY/SIGNIN/${['DATEADD']}/${['AVG(DEGRES)']}/${['AVG(HUMIDITE)']}`,
+        dataType: 'JSON',
+        success: function (response) {
+            $.each(data, function() {
+                $('#chartContainer')
+                    .append($("<option></option>"))
+                    .attr('value', this['fields']['name'])
+                    .text(this['fields']['name']);
+            });
+
+
+            console.log("all is working fine !");
+        },
+        error: ()=> {
+            alert("une erreur est survenue lors de l'envoi des données\nveuillez réessayer plus tard, svp.");
+        }
+    });
+    console.log("fin de la fonction getElementsFromAPI");
+}
