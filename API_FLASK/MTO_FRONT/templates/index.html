@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="page d'accueil principal de l'application web météo"/>
+    <title>MTOLKP</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/main.css') }}" />
+</head>
+<body>
+    <div id="header"> <!-- entête permettant l'affichage et le retrait du menu sur le côté, ainsi que le message de bienvenue pour l'utilisateur et son avatar-->
+        <div id="menuPicture">
+            <button>
+                <img src="{{ url_for('static', filename='/01_annexes/images/primaryMenu.png') }}" alt="menuPrincipal"/>
+            </button>
+        </div>
+        <div class="helloYou">
+            <p id='messageArrivee'> Bonjour, cher <span class="surname">nouvel</span> <span class="name">utilisateur</span>  !</p>
+        </div>
+        <div class="avatarUser">
+
+        </div>
+    </div>
+    
+    <div id="containerPrimary">
+        <div id="menuRollOut">
+            <div class="accueil">
+                <div class="indexImg">
+                    <img src="{{ url_for('static', filename='/01_annexes/images/homeImage.png') }}" alt="Accueil">
+                </div>
+                <div class ="index">
+                    <a href = "/">Accueil</a>
+                </div>
+            </div>
+            <div class="logIn">
+                <div class="logInImage">
+                    <img src="{{ url_for('static', filename='/01_annexes/images/logInImg.png') }}" alt="s'inscrire">
+                </div>
+                <div class="logInText">
+                    <a href="/SIGNUP">S'inscrire</a>
+                </div>
+            </div>
+            <div class="historiques">
+                <div class="historiqueImg">
+                    <img src="{{ url_for('static', filename='/01_annexes/images/loreImage.png') }}" alt="l'historique">
+                </div>
+                <div class="historique">
+                    <a href ="/HISTORY">Historique</a>
+                </div>
+            </div>
+            <div class ="parameters">
+                <div class="parametersImg">
+                    <img src="{{ url_for('static', filename='01_annexes/images/cog.png') }}" alt="parametres">
+                </div>
+                <div class="parameter">
+                    <a href ="parameters.html#parameters">Parametres</a>
+                </div>
+            </div>
+            <div class="shareFacebook">
+                <div class="faceBookPicture">
+                    <img src="{{ url_for('static', filename='01_annexes/images/facebookImage.png') }}" alt="partager sur Facebook">
+                </div>
+                <div class="fbShare">
+                    <a href ="<!--lien vers la page FB-->">Partager</a>
+                </div>
+            </div>
+            <div class="shareTwitter">
+    <!-- put the picture of Tweeter -->
+            </div>
+            <div class="shareOther">
+    <!--  put the picture to share the link on Internet -->
+            </div>
+        </div>
+        <div id="primaryScreen">
+            <div id="weatherScreen">
+			{% block content %}
+				{%- for releve in content_list %}
+                <div class="weatherPicture">
+                    <img src="{{ url_for('static', filename='/01_annexes/images/sunExample.png') }}" alt="le temps qu'il fait">
+                </div>
+                <div class="lengendaryPicture">
+                    <p class="legendary">Ensoleillé</p>
+                </div>
+                <div id="tempHumElementsContainer">
+                    <div class="weatherTemperature">
+
+                        <p class="temperature">T = <span class="temperatureNumber">{{ releve['temperature'] }}</span>°C </p>
+                    </div>
+                    <div class="weatherHumidty">
+                        <p class ="humidity">H = <span class="hygromethrieNumber">{{ releve['humidite'] }}</span>%</p>
+
+                    </div>
+                </div>
+
+                <div id="gdhContainer">
+                    <div class="date">
+                        <!-- <p class="groupDate">12/02/2021</p> -->
+						<p class="groupDate">{{ releve['date'] }}</p>
+                    </div>
+                    <div class="hour">
+                        <p class="groupHour">{{ releve['time'] }}</p>
+                    </div>
+                </div>
+				{%- endfor %}
+			{%- endblock %}
+            </div>
+            <div id="map"></div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <div class="footer_choix">
+            <div class="footer_menu">
+                
+            </div>
+        </div>
+
+    </div>
+    <script src="{{ url_for('static', filename='scriptJavaS.js') }}"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7cT9cVrGkQnxPPEi4llarfOx8-WtiQ-U&callback=initMap&libraries=&v=weekly"
+    defer></script>
+    <script src="{{ url_for('static', filename='map.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+body{
+    font-family: Arial;
+    font-size: 30px;
+    height:auto;
+    width:100%;
+    min-height:1024px;
+    background-image: linear-gradient(#ffffff27, #65FA, #0DB6FA);
+    background-repeat: no-repeat;
+}
+
+a {
+    color : black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#containerPrimary {
+    display: flex;
+    flex: auto;
+    height:auto;
+    width:auto;
+}
+
+/* définition des propriétés du HEADER, à compléter */
+
+#header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color:black;
+    color:antiquewhite;
+}
+
+
+.avatarUser{
+    max-width: 12.5%;
+    max-height: 12.5%;
+    background-color: red;
+}
+
+.menuPicture{
+    flex: auto;
+    max-width: 12.5%;
+    min-width: 12.5%;
+    padding-left: -25px;
+}
+
+.menuPicture img{
+    height: 25px;
+}
+
+.helloYou{
+    flex:auto;
+    max-width:75%;
+    padding-left: 25px;
+    /* margin-left: 10px; retrouver comment faire pour mettre une marge à gauche -- flexbox ???  */
+}
+
+/* fin de la définition des propriétés du HEADER */
+
+
+/* définition du menu type roll out */
+
+#menuRollOut {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex:auto;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color : white;
+    max-width: 8em;
+    width:0%;
+    min-height: 1000px;
+    height: auto;
+    display: none;
+    float: left;
+    z-index: 2;
+}
+
+
+/* définition de la partie "Accueil" */
+#menuRollOut .accueil{
+    padding-top: 30px;
+}
+
+#menuRollOut .index{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .indexImg{
+    float: left;
+}
+#menuRollOut .indexImg img{
+    padding-top: 12px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "Accueil" */
+
+
+/* Définition de la partie "S'inscrire" */
+#menuRollOut .logIn{
+    padding-top : 15px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+#menuRollOut .logInText{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .logInImage{
+    float: left;
+}
+#menuRollOut .logInImage img{
+    padding-top: 10px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "S'inscrire"  */
+
+
+/* Définition de la partie "Historique" */
+#menuRollOut .historiques{
+    padding-top: 15px;
+}
+#menuRollOut .historique{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .historiqueImg{
+    float: left;
+}
+#menuRollOut .historiqueImg img{
+    padding-top: 25px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "Historique" */
+
+/* Définition de la partie "Parametres */
+#menuRollOut .parameters{
+    padding-top: 15px;
+}
+#menuRollOut .parameter{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .parametersImg{
+    float: left;
+}
+#menuRollOut .parametersImg img{
+    padding-top: 25px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "Parametres" */
+
+/* Définition de la partie "Partage FB" */
+#menuRollOut .shareFacebook{
+    padding-top: 15px;
+}
+#menuRollOut .fbShare{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .faceBookPicture{
+    float: left;
+}
+#menuRollOut .faceBookPicture img{
+    padding-top: 25px;
+    padding-right: 5px;
+    height: 1.2em;
+}
+/* Fin de la définition de la partie "Partage FB */
+
+/* Fin de la définition du Menu */
+
+
+footer{
+    display: flex;
+    margin: auto;
+    align-content: space-between;
+    background-color:black;
+}
+
+.footer_choix {
+    display: flex;
+    justify-content: center;
+    background-color:black;
+}
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Définition du responsiv */
+/* media-querries */
+
+@media (max-width:1024px) {
+    body {
+        width: auto;
+        height: auto;
+    }
+
+    #containerPrimary {
+        width: auto;
+        height: auto;
+    }
+
+        /* définition des propriétés du HEADER, à compléter */
+    #header {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .avatarUser {
+        max-width: 12.5%;
+        min-width: 12.5%;
+        height: auto;
+    }
+
+    .menuPicture {
+    padding-left: 12.5px;
+    }
+
+    .helloYou {
+        width: 50%;
+        height:auto;
+        padding-left: 10px;
+        font-size: 0.8em;
+    }
+
+    #menuRollOut {
+        width: auto;
+        height: auto;
+        min-width: 25%;
+    }
+
+    a {
+        font-size: 0.8em;
+    }
+
+    .indexImg .img{
+        width: auto;
+        height: auto;
+    }
+
+    .logInImage img{
+        width: auto;
+        height: auto;
+    }
+    
+    .historiqueImg img{
+        width: auto;
+        height: auto;
+    }
+
+    .parametersImg img {
+        width: auto;
+        height: auto;
+    }
+
+    .faceBookPicture img{
+        width: auto;
+        height: auto;
+    }
+    /* Fin de la définition du Menu */
+    
+}

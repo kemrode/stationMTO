@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s'inscrire</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='logInRequest.css') }}" />
+    <script class="jQuery" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div id="header"> <!-- entête permettant l'affichage et le retrait du menu sur le côté, ainsi que le message de bienvenue pour l'utilisateur et son avatar-->
+        <div id="menuPicture">
+            <button>
+                <img src="{{ url_for('static', filename='01_annexes/images/primaryMenu.png') }}" alt="menuPrincipal"/>
+            </button>
+        </div>
+        <div class="helloYou">
+            <p id='messageArrivee'> Bonjour, cher nouvel utilisateur !</p>
+        </div>
+        <div class="avatarUser">
+
+        </div>
+    </div>
+    <div id="containerPrimary">
+        <div id="menuRollOut">
+            <div class="accueil">
+                <div class="indexImg">
+                    <img src="{{ url_for('static', filename='01_annexes/images/homeImage.png') }}">
+                </div>
+                <div class ="index">
+                    <a href = "/">Accueil</a>
+                </div>
+            </div>
+            <div class="logIn">
+                <div class="logInImage">
+                    <img src="{{ url_for('static', filename='01_annexes/images/logInImg.png') }}">
+                </div>
+                <div class="logInText">
+                    <a href="/SIGNUP">S'inscrire</a>
+                </div>
+            </div>
+            <div class="historiques">
+                <div class="historiqueImg">
+                    <img src="{{ url_for('static', filename='01_annexes/images/loreImage.png') }}">
+                </div>
+                <div class="historique">
+                    <a href ="/HISTORY">Historique</a>
+                </div>
+            </div>
+            <div class ="parameters">
+                <div class="parametersImg">
+                    <img src="{{ url_for('static', filename='01_annexes/images/cog.png') }}">
+                </div>
+                <div class="parameter">
+                    <a href ="parameters.html#parameters">Parametres</a>
+                </div>
+            </div>
+            <div class="shareFacebook">
+                <div class="faceBookPicture">
+                    <img src="{{ url_for('static', filename='01_annexes/images/facebookImage.png') }}">
+                </div>
+                <div class="fbShare">
+                    <a href ="<!--lien vers la page FB-->">Partager</a>
+                </div>
+            </div>
+            <div class="shareTwitter">
+    <!-- put the picture of Tweeter -->
+            </div>
+            <div class="shareOther">
+    <!--  put the picture to share the link on Internet -->
+            </div>
+        </div>
+        <div id="elementContainer">
+            <div id="signUpWindow">
+                <h3 class="nameSignUp">Fiche d'inscription</h3>
+                <div id="nameSU">
+                    <label for="name">Nom: </label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div id="surnameSU">
+                    <label for="surname">Prénom: </label>
+                    <input type="text" id="surname" name="surname">
+                </div>
+                <div id="citySU">
+                    <label for="city">Ville: </label>
+                    <input type="text" id="city" name="city">
+                </div>
+                <div id="mailSU">
+                    <label for="mailAddress">e-mail: </label>
+                    <input type="text" id="mailAddress" name="mailAddress">
+                </div>
+                <div id="passwordSU">
+                    <label for="pwd">Mot de Passe: </label>
+                    <input type="password" id="pwd" name="pwd">
+                </div>
+                <div id="verifSU">
+                    <label for="pwdVerif">Vérifiez votre mot de passe: </label>
+                    <input type="password" id="pwdVerif" name="pwdVerif">
+                </div>
+                <div id="cgu">
+                    <input type="checkbox" id="cguCheckbox" name="cgu" value="true">
+                    <label for="cgu">J'accepte les termes et conditions générales d'utilisation.</label>
+                </div>
+                <div id="submitBTN">
+                    <button class="submitBTN">Envoyer</button>
+                </div>
+            </div>
+        </div>
+        
+        <script src="{{ url_for('static', filename='scriptJavaS.js') }}"></script>
+    
+</body>
+</html>
