@@ -79,14 +79,21 @@ function getElementsFromAPI() {
                 date = response[i]["DATEADD"];
                 temperature = response[i]["MOYTEMP"];
                 hygro = response[i]["MOYHUMI"];
-                dictTemp[date] = temperature;
+                // arrayTemp[i] = {label: date, y:temperature};
+                // arrayHygro[i] = {label: date, y:hygro};
+                
+                tempPoints[i] = {label: date, y: Number(temperature)};
+                hygroPoints[i] = {label: date, y:Number(hygro)};
+
+                // dictTemp[date] = temperature;
+                // dictTemp[date] = temperature;
                 // tempPoints[i]=dictTemp;
-                dictHygro[date] = hygro;
+                // dictHygro[date] = hygro;
                 // hygroPoints[i]=dictHygro;
                 
             }
-            console.log(dictTemp);
-            console.log(dictHygro);
+            // console.log(dictTemp);
+            // console.log(dictHygro);
 
 
             // for(date in dictTemp){
@@ -96,6 +103,13 @@ function getElementsFromAPI() {
             //     hygroPoints = [{label: date, y:hygro}];
             // }
 
+            // for(let i = 0;i<arrayTemp.length;i++){
+            //     tempPoints = arrayTemp[i];
+            // };
+
+            // for(let i = 0;i<arrayHygro.length;i++){
+            //     hygroPoints = arrayHygro[i];
+            // };
 
             console.log(tempPoints);
             console.log(hygroPoints);
@@ -126,29 +140,26 @@ function getElementsFromAPI() {
                     dataPoints: hygroPoints
                 }
                 ],
-                axisX: {
-                    suffix: "/02/2021"
-                }
             });
             chart.render();
 
             // var yUpDate= 10, updateCount = 0;
             // var upDateChart = () => {
-            //     yUpDate = yUpDate + Math.round(5 + Math.random()*(-5-5));
+            //     // yUpDate = yUpDate + Math.round(5 + Math.random()*(-5-5));
             //     updateCount++;
             //     tempPoints.push({
             //         y: yUpDate
             //     });
-            //     chart.options.title.text = "Update" + updateCount;
+            //     hygroPoints.push({
+            //         y: yUpDate
+            //     });
             //     chart.render();
             // };
-            
-            //     //function to set interval of time before to update
-            // setInterval(function(){upDateChart()}, 86400);
-            
-            
-            console.log(dictTemp);
-            console.log(dictHygro);
+        
+                //function to set interval of time before to update
+            // setInterval(function(){upDateChart()}, 60000);
+            //3600000
+        
             console.log("all is working fine !");
         },
         error: ()=> {

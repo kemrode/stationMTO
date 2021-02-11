@@ -14,7 +14,7 @@ body{
     float: left;
     align-self: center;
     margin-top: 100px;
-    height: 300px;
+    height: auto;
     width: 75%;
 }
 
