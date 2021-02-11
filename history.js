@@ -1,3 +1,5 @@
+// const { chart } = require("highcharts");
+
 let userName = document.querySelector('.surname');
 
 // definition of variables about the menu roll out type
@@ -40,6 +42,7 @@ menuBtn.addEventListener('click', ()=> {
         primaryMenu.style.width='8em';
         primaryMenu.style.zIndex=1;
         menuHidden = false;
+
     }
     else {
         primaryMenu.style.display="none";
@@ -47,28 +50,105 @@ menuBtn.addEventListener('click', ()=> {
     }
 });
 
-
-//Def. of a dictTemp
+    
+var date;
+var temperature;
+var hygro;
 var dictTemp = {};
-
-//Def. of a dictHygro
 var dictHygro = {};
+
+var tempPoints = [];
+var hygroPoints = [];
+
+var arrayTemp = [];
+var arrayHygro = [];
+
+window.onload = () => {
+    getElementsFromAPI();
+};
 
 //Ajax request for chart
 function getElementsFromAPI() {
     $.ajax({
         type: "GET",
-        url: `http://192.168.137.24:5000/API/RASPBERRY/SIGNIN/${['DATEADD']}/${['AVG(DEGRES)']}/${['AVG(HUMIDITE)']}`,
+        url: `http://192.168.137.24:5000/API/RASPBERRY/GRAPH`,
         dataType: 'JSON',
         success: function (response) {
-            $.each(data, function() {
-                $('#chartContainer')
-                    .append($("<option></option>"))
-                    .attr('value', this['fields']['name'])
-                    .text(this['fields']['name']);
+            console.log(response);
+            for (let i = 0; i < response.length; i++) {
+                date = response[i]["DATEADD"];
+                temperature = response[i]["MOYTEMP"];
+                hygro = response[i]["MOYHUMI"];
+                dictTemp[date] = temperature;
+                // tempPoints[i]=dictTemp;
+                dictHygro[date] = hygro;
+                // hygroPoints[i]=dictHygro;
+                
+            }
+            console.log(dictTemp);
+            console.log(dictHygro);
+
+
+            // for(date in dictTemp){
+
+            // }
+            // for(date in dictHygro){
+            //     hygroPoints = [{label: date, y:hygro}];
+            // }
+
+
+            console.log(tempPoints);
+            console.log(hygroPoints);
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+
+                title:{
+                    text: "Relevés de températures et d'hygrométrie" ,
+                    fontColor : "red",
+                    fontSize : 30,
+                    borderThickness: 1,
+                    backgroundColor: "#AED6F1",
+                    cornerRadius: 5,
+                    fontWeight: "bold",
+                },
+                data: [{
+                        // Temperatures "relevées"
+                    type: "line",
+                    name: "Températures",
+                    showInLegend: true,
+                    dataPoints: tempPoints
+                },            
+                {
+                        // Relevés d'hygrométrie
+                    type: "line",
+                    name: "Hygrométrie",
+                    showInLegend: true,
+                    dataPoints: hygroPoints
+                }
+                ],
+                axisX: {
+                    suffix: "/02/2021"
+                }
             });
+            chart.render();
 
-
+            // var yUpDate= 10, updateCount = 0;
+            // var upDateChart = () => {
+            //     yUpDate = yUpDate + Math.round(5 + Math.random()*(-5-5));
+            //     updateCount++;
+            //     tempPoints.push({
+            //         y: yUpDate
+            //     });
+            //     chart.options.title.text = "Update" + updateCount;
+            //     chart.render();
+            // };
+            
+            //     //function to set interval of time before to update
+            // setInterval(function(){upDateChart()}, 86400);
+            
+            
+            console.log(dictTemp);
+            console.log(dictHygro);
             console.log("all is working fine !");
         },
         error: ()=> {
@@ -77,3 +157,85 @@ function getElementsFromAPI() {
     });
     console.log("fin de la fonction getElementsFromAPI");
 }
+
+
+// window.onload = function () {
+
+
+
+//     getElementsFromAPI();
+
+//     console.log(dictTemp);
+//     console.log(dictHygro);
+
+//     for(date in dictTemp){
+//         console.log(date);
+//         console.log(temperature);
+//         tempPoints = [{label:date, y:temperature}];
+//     }
+//     console.log(tempPoints);
+
+//     for(date in dictHygro){
+//         hygroPoints = [{label: date, y:hygro}];
+//     }
+//     console.log(hygroPoints);
+//     //var tempPoints = [{label: 01,y: 15},{label: 02,y: 13},{label: 03,y: 10},{label: 04,y: 7},{label: 05,y: 8},
+//     //{label: 06,y: 10},{label: 07,y: 11},{label: 08,y: 13},{label: 09,y: 15},{label: 10,y: 5}];
+//     //var hygroPoints =  [{label: 01,y: 20},{label: 02,y: 22},{label: 03,y: 30},{label: 04,y: 41},{label: 05,y: 42},
+//     //{label: 06,y: 38},{label: 07,y: 26},{label: 08,y: 27},{label: 09,y: 31},{label: 10,y: 46}];
+//     var chart = new CanvasJS.Chart("chartContainer", {
+
+//         //theme: "light",
+//         //chart.option.axisX = { suffix: "/02/2021"},
+//         //chart.option.title = { text:"Relevés des températures et de l'hygrométrie" }
+//         title:{
+//             text: "Relevés de températures et d'hygrométrie" ,
+//             fontColor : "red",
+//             fontSize : 30,
+//             borderThickness: 1,
+//             backgroundColor: "#AED6F1",
+//             cornerRadius: 5,
+//             fontWeight: "bold",
+//         },
+//         data: [{
+//             // Temperatures "relevées"
+//             type: "line",
+//             name: "Températures",
+//             showInLegend: true,
+//             dataPoints: tempPoints
+//         } ,            
+//         {
+//             // Relevés d'hygrométrie
+//             type: "line",
+//             name: "Hygrométrie",
+//             showInLegend: true,
+//             dataPoints: hygroPoints
+//         }
+//         ],
+//         axisX: {
+//             suffix: "/02/2021"
+//         }
+//     });
+//     chart.render();
+
+//     var yUpDate= 10, updateCount = 0;
+//     var upDateChart = () => {
+//         yUpDate = yUpDate + Math.round(5 + Math.random()*(-5-5));
+//         updateCount++;
+
+//         tempPoints.push({
+//             y: yVal
+//         });
+
+//         chart.options.title.text = "Update" + updateCount;
+//         chart.render();
+//     };
+
+//     //function to set interval of time before to update
+//     setInterval(function(){upDateChart()}, 86400);
+// }
+
+
+
+
+
