@@ -8,7 +8,7 @@ apt-get update
 echo "le système est à jour"
 
 apt-get install apache2
-apt-get install postgresql postgresql-contrib
+apt-get install mariadb mariadb-server
 
 apt-get update
 apt-get upgrade

@@ -1,0 +1,63 @@
+cd /opt
+mkdir MTO
+apt-get install python3-pip
+pip3 install pymysql
+pip3 install flask
+pip3 install datetime
+pip3 install socket
+pip3 install requests
+apt-get install vsftpd
+sudo chown -R pi:pi /opt
+sudo chmod 777 -R /opt
+
+
+cd /opt/MTO
+python3 -m flask run --host=0.0.0.0 --port=5000
+
+USE mysql; 
+UPDATE user SET plugin='' WHERE user ='root'; 
+FLUSH PRIVILEGES;
+
+
+create database station_meteo
+ALTER TABLE T_TEMPERATURE ADD HUMIDITE INTEGER IDENTITY(1,1)
+ALTER TABLE T_TEMPERATURE ALTER COLUMN pal_id INTEGER IDENTITY(1,1) NOT NULL PRIMARY KEY
+
+/*==============================================================*/
+/* Table : T_TEMPERATURE                                        */
+/*==============================================================*/
+create table T_TEMPERATURE
+(
+   ID_RELEVE            int not null auto_increment,
+   ID_USER              int not null,
+   DEGRES               decimal(10,1),
+   HUMIDITE             decimal(10,1),
+   DATEADD              date,
+   HOURADD              time,
+   primary key (ID_RELEVE)
+);
+
+/*==============================================================*/
+/* Table : T_UTILISATEUR                                        */
+/*==============================================================*/
+create table T_UTILISATEUR
+(
+   ID_USER              int not null auto_increment,
+   NOM                  varchar(40),
+   PRENOM               varchar(40),
+   VILLE                varchar(40),
+   API_KEY              varchar(63) not null,
+   IPUSER               varchar(16),
+   DATEADD              date,
+   EMAIL                varchar(100),
+   PASSWORD              varchar(100),
+   primary key (ID_USER)
+);
+
+alter table T_TEMPERATURE add constraint FK_AFFECTER foreign key (ID_USER)
+      references T_UTILISATEUR (ID_USER) on delete restrict on update restrict;
+
+
+
+
+
