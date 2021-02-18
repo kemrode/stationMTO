@@ -1,0 +1,476 @@
+.header{
+    display: flex;
+	background-image: url("image/chat.png");
+    background-size: cover;
+}
+.centerdiv{
+     margin: 0 auto;
+     width: 100%; 
+
+}
+.taille{
+    width: 10px;
+}
+.imagetemps{
+    width: 10px;
+    height: 10px
+}
+.center{ 
+	align-items: center;
+    text-align: center;}
+.border{
+	border:solid 2px;
+	color:black;
+}
+.padding{
+	padding-left:1%;
+	padding-right:1%;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+.margin{
+	margin-top:1%;
+	margin-bottom:1%;
+	margin-right:1%;
+	margin-left:1%;
+
+}
+.background_chaleur{
+    background-image: url(image/chaleur.jpg);
+    background-size: cover;
+}
+.background_humidite{
+    background-image: url(image/humidite.jpg);
+    background-size: cover;
+}
+.background_contenu{
+     background-image: url(image/fond.jpg);
+    background-size: cover;
+    background-repeat: no-repeat ;
+    background-attachment:fixed;
+}
+
+.red{
+	background-color:red;
+}
+.body{
+    background-image: url("image/fondcv.jpg");
+    background-size: cover;
+}
+.disconnect {
+    border: none;
+    font-size: 0.9em;
+    color: red;
+    font-style: normal;
+    background: none;
+}
+a {
+    color : black;
+    text-decoration: none;
+}
+.containerPrimary {
+    display: flex;
+    flex: auto;
+    height:auto;
+    width:auto;
+}
+#signIn{
+    max-width: 12.5%;
+    max-height: 12.5%;
+}
+#signIn a {
+    color: antiquewhite;
+    font-style: italic;
+    font-size: 0.9em;
+}
+.menuPicture{
+    flex: auto;
+    max-width: 12.5%;
+    min-width: 12.5%;
+    padding-left: -25px;
+}
+.none{
+      background-image: none;
+      background-color: none;
+
+}
+.imagemenu{
+    width: 50px;
+    height: 50px;
+}
+.menuPicture img{
+    height: 25px;
+}
+.helloYou{
+    flex:auto;
+    max-width:75%;
+    padding-left: 25px;
+}
+#menuRollOut {
+    position: absolute;
+    padding-bottom: 5%;
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color : white;
+    min-height: 75%;
+    min-width: 200px;
+
+    display: none;
+    border:1px black solid;
+}
+
+#menuRollOut .index{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 2em;
+    font-style: normal;
+    text-decoration: none;
+}
+#menuRollOut .indexImg{
+    float: left;
+
+}
+
+#menuRollOut .logInText{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 2em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .logInImage{
+    float: left;
+}
+#menuRollOut .logInImage img{
+    padding-top: 10px;
+    padding-right: 5px;
+    height: 1.2em;
+    padding-left: 15px;
+    font-size: 2em;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+#menuRollOut .historiques{
+    font-style: normal;
+    text-decoration: none;
+}
+
+#menuRollOut .historiqueImg{
+    float: left;
+}
+.historique{
+    font-size: 2em;
+}
+.primaryScreen {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    flex:auto;
+    justify-content: space-between;
+}
+#map {
+    display: flex;
+    margin: auto;
+    align-self: flex-end;
+    width: 25%;
+    height: 50%;
+    padding-top: 150px;;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.weatherScreen {
+    display: flex;
+    flex:auto;
+    margin-left: 5%;
+	margin-right:15%;
+    margin-top: 2%;
+	margin-bottom:2%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: stretch;
+    border: 3px black solid;
+    border-radius: 45px/45px;
+    background-image: url(image/fondcv.jpg);
+    background-size: cover;
+    
+}
+.weatherPicture:nth-child(1){
+    margin: auto;
+    align-self: center;
+
+}
+.weatherPicture img{
+    width:100px;
+    height:100px;
+    min-height: 50px;
+}
+.lengendaryPicture:nth-child(2){
+    margin: auto;
+    align-self: center;
+}
+.legendary{
+    font-weight: bold;
+}
+#tempHumElementsContainer:nth-child(3){
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.weatherTemperature{
+    margin-left:100px;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 1.6---------------------------------
+}
+.weatherHumidty{
+    margin-right:120px;
+    align-self: flex-end;
+    font-weight: bold;
+}
+#gdhContainer:nth-child(4){
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.date{
+    align-self: flex-start;
+    padding-bottom: 20px;
+    margin-left: 65px;
+}
+.groupDate{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.hour{
+    align-self: flex-end;
+    padding-bottom: 20px;
+    margin-right: 65px;
+}
+.groupHour{
+    font-weight: bold;
+    text-decoration: underline;
+}
+@media (max-width:1024px) {
+body {
+        width: auto;
+        height: auto;
+    }
+
+    #containerPrimary {
+        width: auto;
+        height: auto;
+    }
+
+        /* définition des propriétés du HEADER, à compléter */
+    #header {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    #signIn {
+        max-width: 12.5%;
+        min-width: 12.5%;
+    }
+
+    .menuPicture {
+    padding-left: 12.5px;
+    }
+
+    .helloYou {
+        width: 50%;
+        height:auto;
+        padding-left: 10px;
+    }
+
+    #menuRollOut {
+        width: auto;
+        height: auto;
+        min-width: 200px;
+
+    }
+
+    a {
+
+    }
+
+    .indexImg .img{
+        width: auto;
+        height: auto;
+    }
+    .weatherPicture img{
+        width:100px;
+        height:100px;
+        min-height: 50px;
+    }
+
+    .weatherTemperature {
+        margin-left: 10px;
+    }
+
+    .weatherHumidty {
+        margin-right: 10px;
+    }
+
+    .date {
+        margin-left: 15px;
+    }
+
+    .groupDate {
+    }
+
+    .hour {
+        margin-right: 20px;
+    }
+
+    .groupHour {
+    }
+
+    #map {
+          display: flex;
+    margin: auto;
+    align-self: flex-end;
+    width: 25%;
+    height: 50%;
+    padding-top: 150px;;
+    padding-left: 15px;
+    padding-right: 15px;
+    }
+}
+
+/* div loginRequest.css */
+
+
+.elementContainer {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    flex:auto;
+    justify-content: center;
+    
+}
+.signUpWindow {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    height: auto;
+    width: 60%;
+    background-color: #D5D8DC;
+}
+h3 {
+    display:flex;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    font-style: italic;
+}
+
+input {
+    display:flex;
+    justify-content: center;
+    width:70%;
+    height: 50px;
+    border: 3px black solid;
+    border-radius: 45px/45px;
+    background-color: #F0FBFF;
+}
+
+.SU {
+    padding-top: 5%;
+    padding-left: 7%;
+    padding-bottom: 1%;
+}
+
+
+#cgu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+------------------------------------------------
+.box {
+    display: flex;
+    flex:auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width:inherit;
+    height: inherit;
+    align-items: flex-start;
+}
+
+
+
+.form {
+    width: 100%;
+    border: 1px black solid;
+    border-radius: 45px 45px;
+}
+
+
+
+label {
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: bold;
+}
+.formulaire{
+    width: 75%
+}
+.titre{
+    font-size: 2em;
+    text-align:center;
+    width: 50%;
+}
+.formulaire input{
+    font-style: italic;
+    color:#B3B6B7;
+}
+
+
+.btn {
+    display: flex;
+    align-self: center;
+    padding-bottom: 25px;
+}
+
+.btn input {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+-------------------------------------------------
+#cguCheckbox {
+    width: 15%;
+    height:30px;
+} 
+
+#cgu label{
+    width: 85%;
+    font-style: normal;
+}
+
+#submitBTN {
+    display: flex;
+    width : 100%;
+    height: 50px;
+    justify-content: center;
+    align-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.button {
+    display: flex;
+}
+
